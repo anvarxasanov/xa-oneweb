@@ -1,0 +1,313 @@
+:root {
+    --background: #fff;
+    --primary: #146ef5;
+    --surface: #f5f7fa;
+    --highlight: #00E5C3;
+    --text-primary: #1d1d1d;
+    --text-secondary: #6b7280;
+    --success: #16a34a;
+    --error: #dc2626;
+    --primaty-dark: #0a0f1e;
+    --services-bgc: #f4f7ff;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: var(--services-bgc);
+}
+
+
+
+.main-content {
+    flex: 1;
+}
+.main-content__title {
+    margin: 50px 0 16px 0;
+    font-size: 48px;
+    text-align: center;
+    color: var(--text-primary);
+}
+.main-content__subtitle {
+    margin: 0 0 50px 0;
+    text-align: center;
+    font-size: 20px;
+    color: var(--text-secondary);
+}
+
+.main-content__wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.main-content__step-sections {
+    max-width: 982px;
+    flex: 1;
+}
+
+.main-content__section {
+    padding: 32px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    background-color: var(--background);
+}
+
+.main-content__section:not(:last-child) {
+    margin: 0 0 32px;
+}
+
+.main-content__section-title {
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
+    font-size: 24px;
+    color: var(--text-primary);
+}
+
+.main-content__section-subtitle {
+    margin: 0 0 24px 0;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+/* WEBSITE TYPE - STEP 1 */
+
+.webtype__title {
+    margin: 0 0 24px 0;
+    font-size: 24px;
+}
+.webtype__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 колонки */
+    gap: 24px; /* расстояние между карточками */
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.webtype__list__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+    border-radius: 10px;
+    border: 2px solid var(--text-secondary);
+    cursor: pointer;
+}
+.webtype__list__item:hover {
+    border-color: var(--primary);
+}
+.webtype-item__logo {
+    margin: 0 0 12px;
+}
+.webtype-item__title {
+    margin: 0 0 4px;
+    font-size: 18px;
+}
+.webtype-item__subtitle {
+    margin: 0 0 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.webtype-item__price {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--highlight);
+}
+
+
+/* WEBSITE TYPE - STEP 2 */
+.describe {
+    overflow: visible;
+}
+.describe__title {
+    margin-bottom: 8px;
+}
+.describe__form-textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border: 2px solid var(--text-primary);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    box-sizing: border-box;
+    resize: none;
+}
+.describe__form-textarea:hover {
+    border-color: var(--primary);
+}
+
+
+/* WEBSITE TYPE - STEP 3 */
+.deadline__title {
+    margin: 0 0 24px 0;
+    font-size: 24px;
+}
+.deadline__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.deadline-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+    border-radius: 10px;
+    border: 2px solid var(--text-secondary);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.deadline-item:hover {
+    border-color: var(--primary);
+}
+
+.deadline-item.active {
+    border-color: var(--primary);
+    background: rgba(0, 123, 255, 0.05);
+}
+.deadline-item__logo {
+    margin: 0 0 12px;
+}
+.deadline-item__title {
+    margin: 0 0 6px;
+    font-size: 18px;
+}
+.deadline-item__price {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--highlight);
+}
+
+
+
+
+
+/* INVOIVE SUMMARY */
+
+.invoice {
+    position: sticky;
+    top: 80px;
+    width: 420px;
+    max-height: fit-content;
+    padding: 32px;
+    border-radius: 16px;
+    background-color: var(--primaty-dark);
+}
+.invoice__title {
+    margin: 0 0 24px;
+    font-size: 24px;
+    color: var(--background);
+}
+.invoice__variables {
+    margin: 0 0 24px;
+}
+.invoice__variables p {
+    color: var(--text-secondary);
+}
+.invoice__type {
+}
+.invoice__deadline {
+}
+.invoice__package {
+}
+.invoice__pages {
+}
+.invoice__promocode {
+}
+
+.invoice__summary {
+    margin: 0 0 24px;
+    padding: 16px 0 0;
+    border-top: 2px solid var(--text-secondary);
+}
+.invoice__total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 8px;
+    font-size: 18px;
+    color: var(--background);
+}
+.invoice__total-price {
+    font-size: 36px;
+    color: var(--highlight);
+}
+.invoice__deadline {
+}
+.invoice__btn {
+    width: 100%;
+    height: 56px;
+    padding: 10px 10px;
+    font-size: 18px;
+    color: var(--background);
+    background-color: var(--primary);
+}
+
+.site-footer {
+    margin-top: 80px;
+}
+
+
+
+
+@media (max-width: 1100px) {
+    .invoice {
+        width: 255px;
+    }
+}
+
+@media (max-width: 850px) {
+    .main-content__wrapper {
+        flex-direction: column;
+    }
+    .main-content__title {
+        font-size: 40px;
+    }
+    .main-content__subtitle {
+        font-size: 18px;
+    }
+    
+
+    .invoice {
+        position: static;
+        margin-top: 18px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .main-content__title {
+        font-size: 36px;
+    }
+    .main-content__subtitle {
+        font-size: 16px;
+    }
+
+    .webtype__list {
+        grid-template-columns: 1fr; /* 1 колонка */
+    }
+    .deadline__list {
+        grid-template-columns: 1fr;
+    }
+    
+}
+
+@media (max-width: 400px) {
+    .main-content__title {
+        font-size: 32px;
+    }
+    .main-content__subtitle {
+        font-size: 16px;
+    }
+    
+}
