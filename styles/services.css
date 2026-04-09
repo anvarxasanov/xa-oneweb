@@ -264,7 +264,7 @@ body {
 .package__item {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; /* 🔥 держит цену внизу */
     padding: 24px;
     border-radius: 10px;
     border: 2px solid var(--text-secondary);
@@ -284,6 +284,15 @@ body {
     gap: 10px;
     margin-bottom: 8px;
     font-size: 14px;
+}
+.package__item-price {
+    margin-bottom: 0;
+    font-weight: 600;
+    color: var(--highlight);
+}
+
+.invisible {
+    visibility: hidden;
 }
 .tick {
 }
@@ -312,7 +321,7 @@ body {
     }
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1060px) {
     .main-content__wrapper {
         flex-direction: column;
     }
