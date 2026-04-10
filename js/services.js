@@ -165,6 +165,7 @@ inputPages.addEventListener("input", () => {
         invoicePages.innerHTML = `Extra Pages (x${pages_quantity - 5}) <span class="invoice__price price-green">+$${total_price_pages}</span>`;
     } else if (pages_quantity <= 5) {
         extraPages.innerHTML = ``;
+        invoicePages.innerHTML = ``;
     }
 
     calculateTotal();
