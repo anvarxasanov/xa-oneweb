@@ -276,8 +276,6 @@ body {
     font-size: 18px;
     margin: 0 0 16px;
 }
-.package__item-features {
-}
 .package-feature {
     display: flex;
     align-items: center;
@@ -294,9 +292,51 @@ body {
 .invisible {
     visibility: hidden;
 }
-.tick {
+
+
+/* STEP 5 */
+.pages {
 }
-.cross {
+.pages__title {
+    margin-bottom: 8px;
+}
+.pages__counter {
+    display: flex;
+    align-items: center;
+}
+.pages__btn {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    border: 1px solid  var(--text-secondary);
+    color: var(--background);
+    background-color: var(--primary);
+    border-radius: 8px;
+    cursor: pointer;
+}
+.pages__btn:hover {
+    opacity: 0.8;
+}
+.pages__quantity {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-right: 15px;
+    margin-left: 15px;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1.5px solid var(--highlight);
+    background-color: var(--surface);
+    cursor: default;
+}
+.pages__minus {
+}
+.pages__plus {
+}
+.pages__extra {
 }
 
 
