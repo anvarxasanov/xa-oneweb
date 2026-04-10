@@ -185,17 +185,28 @@
                         </ul>
                      </section>
                 
-                     <section class="main-content__section pages">
+                     <!-- STEP 5 -->
+                    <section class="main-content__section pages">
                         <h2 class="main-content__section-title pages__title">Step 5: Number of Pages</h2>
                         <h4 class="main-content__section-subtitle">First 5 pages included. Extra pages: $20 each</h4>
 
                         <div class="pages__counter">
-                            <button class="pages__btn pages__minus">-</button>
-                            <div class="pages__quantity">5</div>
-                            <button class="pages__btn pages__plus">+</button>
-                            <p class="pages__extra"></p>
+                            <input class="pages__input" type="range" min="1" max="15" value="5" id="slider">
+                            <label class="pages__label" for="slider">5</label>
                         </div>
-                     </section>
+                        <p class="pages__extra">Extra pages: +$50</p>
+                    </section>
+
+                     <!-- STEP 6 -->
+                    <section class="main-content__section promocode">
+                        <h2 class="main-content__section-title promocode__title">Step 6: Promo Code (Optional)</h2>
+
+                        <div class="promocode__form">
+                            <input class="promocode__input" type="text" placeholder="Enter promo code">
+                            <button class="promocode__btn button">Apply</button>
+                        </div>
+                        <p class="promocode__hint">Try: SAVE10, WELCOME20, or DISCOUNT15</p>
+                    </section>
                 
                     </div>
                 
@@ -203,7 +214,7 @@
                 <div class="main-content__invoice invoice">
                     <h2 class="invoice__title">Price Summary</h2>
                     <div class="invoice__variables">
-                        <p class="invoice__type">Landing</p>
+                        <p class="invoice__type"></p>
                         <p class="invoice__express-deadline"></p>
                         <p class="invoice__package"></p>
                         <p class="invoice__pages"></p>
