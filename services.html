@@ -70,28 +70,28 @@
 
                         <ul class="webtype__list">
 
-                            <li class="webtype__list__item webtype-item">
+                            <li class="webtype__list__item webtype-item" id="typeLanding">
                                 <div class="webtype-item__logo"><img src="images/rocket-icon.svg" alt=""></div>
                                 <h4 class="webtype-item__title">Landing</h4>
                                 <p class="webtype-item__subtitle">A quick one-page sales website</p>
                                 <span class="webtype-item__price">from $50</span>
                             </li>
 
-                            <li class="webtype__list__item webtype-item">
+                            <li class="webtype__list__item webtype-item" id="typeCorporate">
                                 <div class="webtype-item__logo"><img src="images/building-icon.svg" alt=""></div>
                                 <h4 class="webtype-item__title">Corporate</h4>
                                 <p class="webtype-item__subtitle">Representative website for business</p>
                                 <span class="webtype-item__price">from $80</span>
                             </li>
 
-                            <li class="webtype__list__item webtype-item">
+                            <li class="webtype__list__item webtype-item" id="typeBlog">
                                 <div class="webtype-item__logo"><img src="images/pen-icon.svg" alt=""></div>
                                 <h4 class="webtype-item__title">Blog</h4>
                                 <p class="webtype-item__subtitle">Content platform</p>
                                 <span class="webtype-item__price">from $60</span>
                             </li>
 
-                            <li class="webtype__list__item webtype-item">
+                            <li class="webtype__list__item webtype-item" id="typeEcommerce">
                                 <div class="webtype-item__logo"><img src="images/shopping-cart-icon.svg" alt=""></div>
                                 <h4 class="webtype-item__title">E-Commerce</h4>
                                 <p class="webtype-item__subtitle">Online store with payment</p>
@@ -117,13 +117,13 @@
 
                         <ul class="deadline__list">
 
-                            <li class="deadline__list__item deadline-item">
+                            <li class="deadline__list__item deadline-item" id="standardDeadline">
                                 <div class="deadline-item__logo"><img src="images/clock-icon.svg" alt=""></div>
                                 <h4 class="deadline-item__title">Standard - 14 days</h4>
                                 <span class="deadline-item__price">Basic price</span>
                             </li>
 
-                            <li class="deadline__list__item deadline-item">
+                            <li class="deadline__list__item deadline-item" id="expressDeadline">
                                 <div class="deadline-item__logo"><img src="images/lightning-icon.svg" alt=""></div>
                                 <h4 class="deadline-item__title">Express - 7 days</h4>
                                 <span class="deadline-item__price">+$15</span>
@@ -137,7 +137,7 @@
 
                         <ul class="package__list">
 
-                            <li class="package__item">
+                            <li class="package__item" id="basicPack">
                                 <h4 class="package__item-title">Basic</h4>
 
                                 <div class="package__item-features">
@@ -152,7 +152,7 @@
                                 
                             </li>
 
-                            <li class="package__item">
+                            <li class="package__item" id="standardPack">
                                 <h4 class="package__item-title">Standard</h4>
 
                                 <div class="package__item-features">
@@ -167,7 +167,7 @@
 
                             </li>
 
-                            <li class="package__item">
+                            <li class="package__item" id="premiumPack">
                                 <h4 class="package__item-title">Premium</h4>
 
                                 <div class="package__item-features">
@@ -210,22 +210,26 @@
                 
                     </div>
                 
+
                 
                 <div class="main-content__invoice invoice">
                     <h2 class="invoice__title">Price Summary</h2>
+
                     <div class="invoice__variables">
                         <p class="invoice__type"></p>
-                        <p class="invoice__express-deadline"></p>
+                        <p class="invoice__deadline"></p>
                         <p class="invoice__package"></p>
                         <p class="invoice__pages"></p>
                         <p class="invoice__promocode"></p>
                     </div>
+
                     <div class="invoice__summary">
                         <p class="invoice__total">Total: <span class="invoice__total-price">$0</span></p>
-                        <p class="invoice__deadline"></p>
+                        <p class="invoice__deadline-st"></p>
                     </div>
 
                     <button class="invoice__btn button">Book a Consultation</button>
+
                 </div>
 
             </div>
@@ -308,5 +312,6 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/services.js"></script>
 </body>
 </html>
