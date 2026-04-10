@@ -294,6 +294,15 @@ body {
     color: var(--background);
     background-color: var(--primary);
 }
+.promocode__notification {
+    display: flex;
+    align-items: center;
+}
+.promocode__notification span {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+}
 .promocode__notification.notification-green {
     margin: 16px 0 0;
     padding: 16px;
@@ -375,6 +384,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.invoice__promocode span {
+    color: var(--success);
 }
 .invoice__variable {
     display: flex;
