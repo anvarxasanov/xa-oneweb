@@ -20,6 +20,11 @@ body {
 }
 
 
+.active-service {
+    background-color: #eff5fe;
+    border: 2px solid var(--primary);
+}
+
 
 .main-content {
     flex: 1;
@@ -94,6 +99,11 @@ body {
     border-radius: 10px;
     border: 2px solid var(--text-secondary);
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.webtype__list__item.active-service {
+    border: 2px solid var(--primary);
 }
 .webtype__list__item:hover {
     border-color: var(--primary);
@@ -161,7 +171,10 @@ body {
     border-radius: 10px;
     border: 2px solid var(--text-secondary);
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.2s;
+}
+.deadline-item.active-service {
+    border: 2px solid var(--primary);
 }
 .deadline-item:hover {
     border-color: var(--primary);
@@ -202,6 +215,10 @@ body {
     padding: 24px;
     border-radius: 10px;
     border: 2px solid var(--text-secondary);
+}
+
+.package__item.active-service {
+    border-color: var(--primary);
 }
 .package__item:hover {
     border-color: var(--primary);
@@ -315,6 +332,15 @@ body {
     justify-content: space-between;
 }
 .invoice__deadline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.invoice__price {
+    font-weight: 600;
+}
+.price-green {
+    color: var(--highlight);
 }
 .invoice__package {
 }
@@ -346,7 +372,7 @@ body {
     font-size: 36px;
     color: var(--highlight);
 }
-.invoice__deadline {
+.invoice__deadline-st {
 }
 .invoice__btn {
     width: 100%;
