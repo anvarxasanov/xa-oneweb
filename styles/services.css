@@ -284,6 +284,7 @@ body {
     border-radius: 8px;
     border: 1px solid var(--text-secondary);
     color: var(--text-secondary);
+    box-sizing: border-box;
 }
 .promocode__btn {
     margin-left: 20px;
@@ -458,5 +459,17 @@ body {
     .main-content__subtitle {
         font-size: 16px;
     }
-    
+    .main-content__section-title {
+        font-size: 20px;
+    }
+    .promocode__form {
+        flex-direction: column;
+    }
+    .promocode__btn {
+        margin: 15px 0 0;
+        width: 100%;
+    }
+    .promocode__hint {
+        font-size: 12px;
+    }
 }
