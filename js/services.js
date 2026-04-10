@@ -4,6 +4,7 @@ const invoiceDeadline = document.querySelector(".invoice__deadline");
 const invoiceDeadlineStandard = document.querySelector(".invoice__deadline-st");
 const invoiceTotalPrice = document.querySelector(".invoice__total-price");
 const invoicePackage = document.querySelector(".invoice__package");
+const invoicePages = document.querySelector(".invoice__pages");
 
 
 
@@ -14,7 +15,8 @@ const prices = {
     ecommerce_price: 100,
     express_deadline: 15,
     standard_price: 125,
-    premium_price: 170
+    premium_price: 170,
+    extra_page: 20
 }
 
 let total_price = 0
@@ -44,6 +46,10 @@ function calculateTotal() {
         total_price += prices.standard_price;
     } else if (premium.classList.contains("active-service")) {
         total_price += prices.premium_price;
+    }
+    const pages = +inputPages.value;
+    if (pages > 5) {
+        total_price += (pages - 5) * prices.extra_page;
     }
 
     invoiceTotalPrice.textContent = `$${total_price}`;
@@ -138,3 +144,28 @@ packages.forEach(function (package) {
         calculateTotal();
     })
 });
+
+
+
+// Selecting pages quantity
+const inputPages = document.querySelector(".pages__input");
+const labelPages = document.querySelector(".pages__label");
+const extraPages = document.querySelector(".pages__extra");
+
+
+inputPages.addEventListener("input", () => {
+    const pages_quantity = inputPages.value;
+    labelPages.innerHTML = pages_quantity;
+
+    invoicePages.style.color = "#fff";
+
+    if (pages_quantity > 5) {
+        const total_price_pages = (pages_quantity - 5) * prices.extra_page
+        extraPages.innerHTML = `Extra pages: +$${total_price_pages}`;
+        invoicePages.innerHTML = `Extra Pages (x${pages_quantity - 5}) <span class="invoice__price price-green">+$${total_price_pages}</span>`;
+    } else if (pages_quantity <= 5) {
+        extraPages.innerHTML = ``;
+    }
+
+    calculateTotal();
+})
