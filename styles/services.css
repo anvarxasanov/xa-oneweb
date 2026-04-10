@@ -294,6 +294,26 @@ body {
     color: var(--background);
     background-color: var(--primary);
 }
+.promocode__notification.notification-green {
+    margin: 16px 0 0;
+    padding: 16px;
+    width: 100%;
+    border: 2px solid var(--highlight);
+    border-radius: 12px;
+    color: var(--success);
+    background-color: #caf3ed;
+    box-sizing: border-box;
+}
+.promocode__notification.notification-red {
+    margin: 16px 0 0;
+    padding: 16px;
+    width: 100%;
+    border: 2px solid var(--error);
+    border-radius: 12px;
+    color: var(--error);
+    background-color: #fbbdbd;
+    box-sizing: border-box;
+}
 .promocode__hint {
     margin-bottom: 0;
     font-size: 14px;
