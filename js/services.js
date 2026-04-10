@@ -11,7 +11,7 @@ const prices = {
     corporate_price: 80,
     blog_price: 60,
     ecommerce_price: 100,
-    express_deadline_price: 15,
+    express_deadline: 15,
     standard_price: 125,
     premium_price: 170
 }
@@ -34,7 +34,7 @@ function calculateTotal() {
     }
 
     if (expressDeadline.classList.contains("active-service")) {
-        total_price += prices.express_deadline_price;
+        total_price += prices.express_deadline;
     }
 
     invoiceTotalPrice.textContent = `$${total_price}`;
