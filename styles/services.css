@@ -216,7 +216,6 @@ body {
     border-radius: 10px;
     border: 2px solid var(--text-secondary);
 }
-
 .package__item.active-service {
     border-color: var(--primary);
 }
@@ -262,7 +261,6 @@ body {
     font-weight: 600;
     color: var(--primary);
 }
-
 .pages__extra {
     margin-top: 16px;
     margin-bottom: 0;
@@ -323,8 +321,8 @@ body {
 .invoice__variables {
     margin: 0 0 24px;
 }
-.invoice__variables p {
-    color: var(--text-secondary);
+.invoice__variables p:empty {
+    margin: 0;
 }
 .invoice__type {
     display: flex;
