@@ -5,6 +5,7 @@ const invoiceDeadlineStandard = document.querySelector(".invoice__deadline-st");
 const invoiceTotalPrice = document.querySelector(".invoice__total-price");
 const invoicePackage = document.querySelector(".invoice__package");
 const invoicePages = document.querySelector(".invoice__pages");
+const invoicePromocode = document.querySelector(".invoice__promocode");
 
 
 
@@ -23,51 +24,71 @@ const promocodes = {
     start10: {
         discount: 10,
         min_amount: 100,
-        active: true
+        active: "True"
     },
     vip20: {
         discount: 20,
         min_amount: 200,
-        active: true
+        active: "True"
     },
     new5: {
         discount: 5,
         min_amount: 0,
-        active: false
+        active: "False"
     }
 }
 
 let total_price = 0
+let promo_discount = 0
+let base_price = 0;
 
 
 // CALCULATE AND UPDATE TOTAL
 function calculateTotal() {
-    total_price = 0;
+    base_price = 0;
 
+    // Type
     if (landing.classList.contains("active-service")) {
-        total_price += prices.landing_price;
+        base_price += prices.landing_price;
     } else if (corporate.classList.contains("active-service")) {
-        total_price += prices.corporate_price;
+        base_price += prices.corporate_price;
     } else if (blog.classList.contains("active-service")) {
-        total_price += prices.blog_price;
+        base_price += prices.blog_price;
     } else if (ecommerce.classList.contains("active-service")) {
-        total_price += prices.ecommerce_price;
+        base_price += prices.ecommerce_price;
     }
 
+    // Deadline
     if (expressDeadline.classList.contains("active-service")) {
-        total_price += prices.express_deadline;
+        base_price += prices.express_deadline;
     }
 
+    // Package
     if (basic.classList.contains("active-service")) {
-        total_price += 0;
+        base_price += 0;
     } else if (standard.classList.contains("active-service")) {
-        total_price += prices.standard_price;
+        base_price += prices.standard_price;
     } else if (premium.classList.contains("active-service")) {
-        total_price += prices.premium_price;
+        base_price += prices.premium_price;
     }
-    const pages = +inputPages.value;
+
+    // Pages
+    const pages = Number(inputPages.value);
     if (pages > 5) {
-        total_price += (pages - 5) * prices.extra_page;
+        base_price += (pages - 5) * prices.extra_page;
+    }
+
+    total_price = base_price
+
+    // Promo
+    if (promo_discount > 0) {
+        const discount_amount = base_price * promo_discount / 100;
+
+        total_price -= discount_amount;
+
+        invoicePromocode.innerHTML = `Promo Code Discount: <span class="invoice__price price-green">-$${discount_amount}</span>`;
+    } else {
+        invoicePromocode.innerHTML = ``;
     }
 
     invoiceTotalPrice.textContent = `$${total_price}`;
@@ -184,6 +205,55 @@ inputPages.addEventListener("input", () => {
     } else if (pages_quantity <= 5) {
         extraPages.innerHTML = ``;
         invoicePages.innerHTML = ``;
+    }
+
+    calculateTotal();
+})
+
+
+
+// Entering promocodes
+const promoInput = document.querySelector(".promocode__input");
+const promoButton = document.querySelector(".promocode__btn");
+const promoNotification = document.querySelector(".promocode__notification");
+
+promoButton.addEventListener("click", () => {
+    const promo = promoInput.value.toLowerCase();
+    invoicePromocode.style.color = "#fff";
+
+    calculateTotal();
+
+    if (promo in promocodes) {
+        const promo_data = promocodes[promo];
+
+        if (promo_data.active === "False") {
+            promo_discount = 0;
+
+            promoNotification.classList.add("notification-red");
+            promoNotification.innerHTML = `<span><img src="images/x-icon.svg"></span> Invalid or inactive promo code!`;
+        
+        } else if (promo_data.min_amount > base_price) {
+
+            promo_discount = 0;
+
+            promoNotification.classList.add("notification-red");
+            promoNotification.innerHTML = `<span><img src="images/x-icon.svg"></span> This promo requires minimum order of $${promo_data.min_amount}!`;
+        
+        } else {
+            promo_discount = promo_data.discount
+
+            const discount_amount = total_price * promo_discount / 100;
+
+            promoNotification.classList.remove("notification-red");
+            promoNotification.classList.add("notification-green");
+            promoNotification.innerHTML = `<span><img src="images/check-icon.svg"></span> Promo code accepted! You saved $${discount_amount}`;
+
+        }
+    } else {
+        promo_discount = 0;
+
+        promoNotification.classList.add("notification-red");
+        promoNotification.innerHTML = `<span><img src="images/x-icon.svg"></span> Invalid or inactive promo code!`;
     }
 
     calculateTotal();
