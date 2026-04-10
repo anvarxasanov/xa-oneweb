@@ -230,7 +230,7 @@ promoButton.addEventListener("click", () => {
             promo_discount = 0;
 
             promoNotification.classList.add("notification-red");
-            promoNotification.innerHTML = `<span><img src="images/x-icon.svg"></span> Invalid or inactive promo code!`;
+            promoNotification.innerHTML = `<span><img src="images/x-icon.svg"></span> Inactive promo code!`;
         
         } else if (promo_data.min_amount > base_price) {
 
