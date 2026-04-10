@@ -73,8 +73,7 @@ body {
     color: var(--text-secondary);
 }
 
-/* WEBSITE TYPE - STEP 1 */
-
+/* STEP 1 */
 .webtype__title {
     margin: 0 0 24px 0;
     font-size: 24px;
@@ -119,7 +118,7 @@ body {
 }
 
 
-/* WEBSITE TYPE - STEP 2 */
+/* STEP 2 */
 .describe {
     overflow: visible;
 }
@@ -141,7 +140,7 @@ body {
 }
 
 
-/* WEBSITE TYPE - STEP 3 */
+/* STEP 3 */
 .deadline__title {
     margin: 0 0 24px 0;
     font-size: 24px;
@@ -184,71 +183,6 @@ body {
     font-size: 16px;
     font-weight: 600;
     color: var(--highlight);
-}
-
-
-
-
-
-/* INVOIVE SUMMARY */
-
-.invoice {
-    position: sticky;
-    top: 80px;
-    width: 420px;
-    max-height: fit-content;
-    padding: 32px;
-    border-radius: 16px;
-    background-color: var(--primaty-dark);
-}
-.invoice__title {
-    margin: 0 0 24px;
-    font-size: 24px;
-    color: var(--background);
-}
-.invoice__variables {
-    margin: 0 0 24px;
-}
-.invoice__variables p {
-    color: var(--text-secondary);
-}
-.invoice__type {
-}
-.invoice__deadline {
-}
-.invoice__package {
-}
-.invoice__pages {
-}
-.invoice__promocode {
-}
-
-.invoice__summary {
-    margin: 0 0 24px;
-    padding: 16px 0 0;
-    border-top: 2px solid var(--text-secondary);
-}
-.invoice__total {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 0 8px;
-    font-size: 18px;
-    color: var(--background);
-}
-.invoice__total-price {
-    font-size: 36px;
-    color: var(--highlight);
-}
-.invoice__deadline {
-}
-.invoice__btn {
-    width: 100%;
-    height: 56px;
-    padding: 10px 10px;
-    font-size: 18px;
-    color: var(--background);
-    background-color: var(--primary);
 }
 
 
@@ -295,8 +229,6 @@ body {
 
 
 /* STEP 5 */
-.pages {
-}
 .pages__title {
     margin-bottom: 8px;
 }
@@ -304,41 +236,126 @@ body {
     display: flex;
     align-items: center;
 }
-.pages__btn {
-    width: 40px;
-    height: 40px;
-    margin: 0;
-    padding: 0;
-    border: 1px solid  var(--text-secondary);
-    color: var(--background);
-    background-color: var(--primary);
-    border-radius: 8px;
-    cursor: pointer;
+.pages__input {
+    width: 100%;
+    margin-right: 30px;
 }
-.pages__btn:hover {
-    opacity: 0.8;
-}
-.pages__quantity {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    margin-right: 15px;
-    margin-left: 15px;
-    width: 40px;
-    height: 40px;
-    border-radius: 8px;
-    border: 1.5px solid var(--highlight);
-    background-color: var(--surface);
-    cursor: default;
-}
-.pages__minus {
-}
-.pages__plus {
-}
-.pages__extra {
+.pages__label {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary);
 }
 
+.pages__extra {
+    margin-top: 16px;
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--highlight);
+}
+
+
+/* STEP 6 */
+.promocode__form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.promocode__input {
+    width: 100%;
+    margin: 0;
+    padding: 12px 16px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid var(--text-secondary);
+    color: var(--text-secondary);
+}
+.promocode__btn {
+    margin-left: 20px;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: 1px solid var(--primary);
+    color: var(--background);
+    background-color: var(--primary);
+}
+.promocode__hint {
+    margin-bottom: 0;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+
+
+
+/* INVOIVE SUMMARY */
+
+.invoice {
+    position: sticky;
+    top: 80px;
+    width: 420px;
+    max-height: fit-content;
+    padding: 32px;
+    border-radius: 16px;
+    background-color: var(--primaty-dark);
+}
+.invoice__title {
+    margin: 0 0 24px;
+    font-size: 24px;
+    color: var(--background);
+}
+.invoice__variables {
+    margin: 0 0 24px;
+}
+.invoice__variables p {
+    color: var(--text-secondary);
+}
+.invoice__type {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.invoice__deadline {
+}
+.invoice__package {
+}
+.invoice__pages {
+}
+.invoice__promocode {
+}
+.invoice__variable {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.invoice__summary {
+    margin: 0 0 24px;
+    padding: 16px 0 0;
+    border-top: 2px solid var(--text-secondary);
+}
+.invoice__total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 8px;
+    font-size: 18px;
+    color: var(--background);
+}
+.invoice__total-price {
+    font-size: 36px;
+    color: var(--highlight);
+}
+.invoice__deadline {
+}
+.invoice__btn {
+    width: 100%;
+    height: 56px;
+    padding: 10px 10px;
+    font-size: 18px;
+    color: var(--background);
+    background-color: var(--primary);
+}
 
 
 
@@ -400,9 +417,6 @@ body {
 
     .package__list {
         grid-template-columns: 1fr;
-    }
-    .pages__counter {
-        justify-content: center;
     }
 }
 
