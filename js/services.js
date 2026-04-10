@@ -3,6 +3,7 @@ const invoiceType = document.querySelector(".invoice__type");
 const invoiceDeadline = document.querySelector(".invoice__deadline");
 const invoiceDeadlineStandard = document.querySelector(".invoice__deadline-st");
 const invoiceTotalPrice = document.querySelector(".invoice__total-price");
+const invoicePackage = document.querySelector(".invoice__package");
 
 
 
@@ -35,6 +36,14 @@ function calculateTotal() {
 
     if (expressDeadline.classList.contains("active-service")) {
         total_price += prices.express_deadline;
+    }
+
+    if (basic.classList.contains("active-service")) {
+        total_price += 0;
+    } else if (standard.classList.contains("active-service")) {
+        total_price += prices.standard_price;
+    } else if (premium.classList.contains("active-service")) {
+        total_price += prices.premium_price;
     }
 
     invoiceTotalPrice.textContent = `$${total_price}`;
@@ -88,13 +97,14 @@ deadlines.forEach(function (deadline) {
         deadlines.forEach(el => el.classList.remove("active-service"));
         deadline.classList.add("active-service");
         invoiceDeadline.style.color = "#fff";
-        invoiceDeadlineStandard.style.color = "#fff";
 
         if (deadline === expressDeadline) {
             invoiceDeadline.innerHTML = `Express Deadline: <span class="invoice__price price-green">+$${prices.express_deadline}</span>`;
             invoiceDeadlineStandard.innerHTML = ``;
         } else if (deadline == standardDeadline) {
             invoiceDeadlineStandard.innerHTML = `Deadline: 14 days`;
+            invoiceDeadlineStandard.style.margin = "0";
+            invoiceDeadlineStandard.style.color = "#c4c7ccff";
             invoiceDeadline.innerHTML = ``;
         }
         calculateTotal();
@@ -115,5 +125,16 @@ packages.forEach(function (package) {
 
         packages.forEach(el => el.classList.remove("active-service"));
         package.classList.add("active-service");
+        invoicePackage.style.color = "#fff";
+
+        if (package == basic) {
+            invoicePackage.innerHTML = `Package (Basic): <span class="invoice__price">Included</span>`;
+        } else if (package == standard) {
+            invoicePackage.innerHTML = `Package (Standard): <span class="invoice__price price-green">+$${prices.standard_price}</span>`;
+        } else if (package == premium) {
+            invoicePackage.innerHTML = `Package (Premium): <span class="invoice__price price-green">+$${prices.premium_price}</span>`;
+        }
+
+        calculateTotal();
     })
 });
