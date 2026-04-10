@@ -19,6 +19,24 @@ const prices = {
     extra_page: 20
 }
 
+const promocodes = {
+    start10: {
+        discount: 10,
+        min_amount: 100,
+        active: true
+    },
+    vip20: {
+        discount: 20,
+        min_amount: 200,
+        active: true
+    },
+    new5: {
+        discount: 5,
+        min_amount: 0,
+        active: false
+    }
+}
+
 let total_price = 0
 
 
