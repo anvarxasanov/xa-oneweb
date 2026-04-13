@@ -35,16 +35,16 @@ if (form) {
             isValid = false;
         }
 
-        // const phonePattern = /^\+?[0-9]{9,15}$/;
+        const phonePattern = /^\+?[0-9]{9,15}$/;
 
-        // // PHONE VALIDATION
-        // if (phoneInput.value.trim() === "") {
-        //     showError(phoneInput, "Phone number is required");
-        //     isValid = false;
-        // } else if (!phonePattern.test(phoneInput.value.trim())) {
-        //     showError(phoneInput, "Enter a valid phone number");
-        //     isValid = false;
-        // }
+        // PHONE VALIDATION
+        if (phoneInput.value.trim() === "") {
+            showError(phoneInput, "Phone number is required");
+            isValid = false;
+        } else if (!phonePattern.test(phoneInput.value.trim())) {
+            showError(phoneInput, "Enter a valid phone number");
+            isValid = false;
+        }
 
         // SERVICE VALIDATION
         if (serviceInput.value === "") {
