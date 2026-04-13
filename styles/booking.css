@@ -1,0 +1,82 @@
+/* ================= BOOKING SECTION ================= */
+
+.booking {
+  padding: 80px 0;
+  background-color: var(--surface);
+}
+
+.booking__container {
+  display: flex;
+  justify-content: center;
+}
+
+.booking__content {
+  width: 100%;
+  max-width: 600px;
+}
+
+.booking__title {
+  font-size: 32px;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+
+.booking__text {
+  margin-bottom: 25px;
+  color: var(--text-secondary);
+}
+
+.booking__form {
+  background: var(--background);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.booking__group {
+  margin-bottom: 15px;
+}
+
+.booking__group input,
+.booking__group select,
+.booking__group textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+.booking__group textarea {
+    resize: none;
+}
+.booking__group input:focus,
+.booking__group select:focus,
+.booking__group textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.booking__btn {
+  width: 100%;
+  background-color: var(--primary);
+  color: var(--background);
+  border-color: var(--primary);
+}
+
+/* ERROR STATE */
+.input-error {
+  border: 1px solid var(--error);
+}
+
+.error-message {
+  color: var(--error);
+  font-size: 12px;
+  margin-top: 5px;
+  display: none;
+}
+
+/* show error */
+.error-message.active {
+  display: block;
+}
