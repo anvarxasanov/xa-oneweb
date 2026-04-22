@@ -87,3 +87,33 @@ if (form) {
         }
     }
 }
+
+const modifyBtn = document.querySelector(".manage-modify");
+const cancelBtn = document.querySelector(".manage-cancel");
+
+if (modifyBtn && cancelBtn) {
+
+    modifyBtn.addEventListener("click", function () {
+        const email = document.querySelector(".manage-email").value.trim();
+        const id = document.querySelector(".manage-id").value.trim();
+
+        if (email === "" || id === "") {
+            alert("Please enter email and phone number.");
+            return;
+        }
+
+        alert("Redirecting to modify booking...");
+    });
+
+    cancelBtn.addEventListener("click", function () {
+        const email = document.querySelector(".manage-email").value.trim();
+        const id = document.querySelector(".manage-id").value.trim();
+
+        if (email === "" || id === "") {
+            alert("Please enter email and phone number.");
+            return;
+        }
+
+        alert("Booking canceled (demo)");
+    });
+}
