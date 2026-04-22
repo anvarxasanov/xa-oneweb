@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneWeb Services</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/faq.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-header__container container">
+            <div class="site-header__logo">
+                <a class="site-header__logo-link" href="index.html">
+                    One<span>Web</span> <img src="images/code-icon.svg" alt="">
+                </a>
+            </div>
+
+            <nav class="site-header__nav navigation">
+                <ul class="site-header__nav-list nav-list">
+                    <li class="nav-list__item"><a href="index.html">Home</a></li>
+                    <li class="nav-list__item"><a href="services.html">Services</a></li>
+                    <li class="nav-list__item"><a href="booking.html">Booking</a></li>
+                    <li class="nav-list__item active"><a href="faq.html">FAQ</a></li>
+                    <li class="nav-list__item"><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="site-header__buttons">
+                <button class="telegram-btn"><a href="https://t.me/xasanov_a87" target="_blank"><img src="images/telegram-icon-black.svg" alt=""></a></button>
+                <button class="sign-btn button">Sign In</button>
+                <button class="quote-btn button">Get a Quote</button>
+            </div>
+
+            <button class="site-header__menu-btn"><img src="images/menu-header.svg" alt=""></button>
+
+            <div class="site-header__sidebar sidebar">
+                <nav class="sidebar__nav navigation">
+                    <ul class="sidebar__nav-list nav-list">
+                        <li class="sidebar-nav-list__item"><a href="index.html">Home</a></li>
+                        <li class="sidebar-nav-list__item"><a href="services.html">Services</a></li>
+                        <li class="sidebar-nav-list__item"><a href="booking.html">Booking</a></li>
+                        <li class="sidebar-nav-list__item active"><a href="faq.html">FAQ</a></li>
+                        <li class="sidebar-nav-list__item"><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+
+                <div class="sidebar__buttons">
+                    <button class="sidebar__sign-btn button">Sign In</button>
+                    <button class="sidebar__quote-btn button">Get a Quote</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="faq-wrapper">
+            <div class="faq-header">
+                <h1>Frequently Asked Questions</h1>
+                <p>Find answers to the most popular questions about our services</p>
+            </div>
+
+            <div class="search-box">
+                <svg fill="none" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35m1.85-5.15a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                <input type="text" id="faqSearch" placeholder="Search your question..." />
+            </div>
+
+            <div class="faq-tabs" id="faqTabs">
+                <button class="faq-tab active" data-category="website-types">🌐 Website Types</button>
+                <button class="faq-tab" data-category="development-time">⏱️ Development Time</button>
+                <button class="faq-tab" data-category="pricing">💰 Pricing & Packages</button>
+                <button class="faq-tab" data-category="required-info">📝 Required Information</button>
+                <button class="faq-tab" data-category="support">🔧 Support & Updates</button>
+            </div>
+
+            <div class="faq-list" id="faqList">
+                <div class="faq-item" data-category="website-types" data-question="What is the difference between Landing and Corporate website?">
+                    <button class="faq-question">
+                        <span>What is the difference between Landing and Corporate website?</span>
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer-wrap">
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>A landing page is usually a single-page website focused on one product, service, or campaign with a clear conversion goal. A corporate website has multiple pages and is better for presenting a company, its services, team, portfolio, and contact information in a more complete way.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="website-types" data-question="When should I choose E-Commerce?">
+                    <button class="faq-question">
+                        <span>When should I choose E-Commerce?</span>
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer-wrap">
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>You should choose an e-commerce website when you need to sell products or services online, accept payments, manage orders, and allow customers to browse a catalog. It is the right option for businesses that need a full online store experience.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="website-types" data-question="What is a blog website and who is it for?">
+                    <button class="faq-question">
+                        <span>What is a blog website and who is it for?</span>
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer-wrap">
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>A blog website is designed for publishing regular content like articles, news, guides, or updates. It works well for personal brands, educators, agencies, and businesses that want to grow through SEO and content marketing.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="development-time" data-question="How long does it take to build a website?">
+                    <button class="faq-question">
+                        <span>How long does it take to build a website?</span>
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer-wrap">
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>The timeline depends on the project scope. A landing page may take a few days, while a corporate site or online store can take several weeks. Final timing also depends on how quickly content, feedback, and approvals are provided.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="development-time" data-question="Can you make the site faster if I have a deadline?">
+                    <button class="faq-question">
+                        <span>Can you make the site faster if I have a deadline?</span>
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer-wrap">
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Yes, urgent projects can often be prioritized if the scope is clear and all required materials are ready. Fast delivery usually works best when revisions are limited and communication is quick.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="pricing" data-question="What affects the website price?">
+                    <button class="faq-question">
+                        <span>What affects the website price?</span>
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer-wrap">
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>The price depends on the number of pages, custom design level, animations, integrations, CMS functionality, multilingual support, and overall complexity. Extra services like copywriting, SEO setup, and branding can also influence the total cost.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="pricing" data-question="Do you offer fixed packages?">
+                    <button class="faq-question">
+                        <span>Do you offer fixed packages?</span>
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer-wrap">
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Yes, fixed packages can be offered for common website types like landing pages, business websites, and online stores. Custom quotes are usually better for projects with specific requirements or advanced features.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="required-info" data-question="What do you need from me before starting?">
+                    <button class="faq-question">
+                        <span>What do you need from me before starting?</span>
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer-wrap">
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Usually, the basic requirements include your business information, website goals, structure, content, branding materials, examples of websites you like, and any technical preferences. The more complete the input, the smoother the process will be.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="required-info" data-question="Can you help if I do not have content yet?">
+                    <button class="faq-question">
+                        <span>Can you help if I do not have content yet?</span>
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer-wrap">
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Yes, content structure can be planned first, and placeholder text can be used during design. If needed, content writing support can also be included as part of the project.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="support" data-question="Do you provide support after launch?">
+                    <button class="faq-question">
+                        <span>Do you provide support after launch?</span>
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer-wrap">
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Yes, post-launch support can include bug fixes, content updates, performance monitoring, and technical guidance. The exact support period depends on the agreed package or maintenance plan.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="support" data-question="Can the website be updated later?">
+                    <button class="faq-question">
+                        <span>Can the website be updated later?</span>
+                        <span class="faq-icon"></span>
+                    </button>
+                    <div class="faq-answer-wrap">
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Yes, the website can always be expanded or updated later. New pages, features, integrations, and design improvements can be added as your business grows.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="faq-empty" id="faqEmpty">No questions found for your search.</div>
+
+            <div class="faq-cta">
+                <h2>Still have questions?</h2>
+                <p>Our team is ready to help. We respond within 24 hours.</p>
+                <div class="faq-cta-actions">
+                    <button class="btn btn-primary">Contact Support</button>
+                    <button class="btn btn-secondary">Book a Call</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="site-footer__container container">
+            <div class="site-footer__links">
+
+                <div class="site-footer__info">
+                    <div class="site-footer__logo">
+                        <a class="site-footer__logo-link" href="index.html">
+                            One<span>Web</span> <img src="images/code-icon.svg" alt="">
+                        </a>
+                    </div>
+
+                    <p class="site-footer__text">Building professional websites for businesses of all sizes — powered by the latest technologies.</p>
+
+                    <div class="site-footer__socials">
+                        <ul class="site-footer__socials-list socials-list">
+                            <li class="socials-list__item"><a href="https://t.me/xasanov_a87" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-send-icon lucide-send"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11zM21.854 2.147l-10.94 10.939"/></svg></a></li>
+                            <li class="socials-list__item"><a href="https://www.instagram.com/oneweb_studio/" target="_blank"><img src="" alt="instagram icon"></a></li>
+                            <li class="socials-list__item"><a href="" target="_blank"><img src="" alt="linkedin icon"></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="site-footer__nav">
+                    <ul class="site-footer__nav-list nav-list">
+                        <p class="site-footer__title">Quick Links</p>
+                        <li class="footer-nav-list__item"><a href="index.html">Home</a></li>
+                        <li class="footer-nav-list__item"><a href="services.html">Services</a></li>
+                        <li class="footer-nav-list__item"><a href="booking.html">Booking</a></li>
+                        <li class="footer-nav-list__item"><a href="faq.html">FAQ</a></li>
+                        <li class="footer-nav-list__item"><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="site-footer__services">
+                    <ul class="site-footer__nav-list nav-list">
+                        <p class="site-footer__title">Our Services</p>
+                        <li class="footer-nav-list__item"><a href="services.html">Landing Page</a></li>
+                        <li class="footer-nav-list__item"><a href="services.html">Corporate Website</a></li>
+                        <li class="footer-nav-list__item"><a href="services.html">Blog</a></li>
+                        <li class="footer-nav-list__item"><a href="services.html">E-Commerce Store</a></li>
+                        <li class="footer-nav-list__item"><a href="services.html">Website Redesign</a></li>
+                    </ul>
+                </div>
+
+                <div class="site-footer__contacts">
+                    <ul class="site-footer__nav-list nav-list">
+                        <p class="site-footer__title">Get in Touch</p>
+                        <li class="footer-nav-list__item"><a href="">📧 oneweb@info.com</a></li>
+                        <li class="footer-nav-list__item"><a href="">📞 +998-99-907-52-07</a></li>
+                        <li class="footer-nav-list__item">💬 Telegram: <a href="https://t.me/xasanov_a87" target="_blank">@xasanov_a87</a></li>
+                        <li class="footer-nav-list__item">🕐 Mon-Fri, 9:00-18:00</li>
+                        <li class="footer-nav-list__item"><button class="site-footer__booking-btn button">Book a Free Call</button></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="site-footer__promo">
+                <p class="site-footer__promo-text">🎁 Have a promo code? Use it during price calculation and get your discount!</p>
+                <button class="site-footer__promo-btn button">Calculate Price →</button>
+            </div>
+
+            <div class="site-footer__policy">
+                <p class="site-footer__rights">© 2025 OneWeb. All rights reserved.</p>
+                <p class="site-footer__love">Made with ❤️ by OneWeb Team</p>
+                <div class="site-footer__policy-links">
+                    <a class="policy-links__item" href="">Privacy Policy</a>
+                    <a class="policy-links__item" href="">Terms of Service</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+</html>
