@@ -80,3 +80,54 @@
 .error-message.active {
   display: block;
 }
+
+.booking-manage {
+  padding: 0 0 40px;
+}
+
+.booking-manage__box {
+  background-color: var(--surface);
+  border-radius: 16px;
+}
+
+.booking-manage__title {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: var(--text-primary);
+}
+
+.booking-manage__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.booking-manage__form input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.manage-modify {
+  background-color: #e5e7eb;
+}
+
+.manage-cancel {
+  color: red;
+  border-color: red;
+}
+
+@media (max-width: 600px) {
+  .booking__title {
+    font-size: 28px;
+  }
+  .booking-manage__title {
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .booking-manage__form {
+    display: flex;
+    flex-direction: column;
+  }
+}
