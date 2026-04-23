@@ -241,16 +241,35 @@ confirmBtn.addEventListener("click", () => {
     alert("Time updated!");
 });
 
-// CANCEL
+// // CANCEL
+// cancelBtn.addEventListener("click", () => {
+//     if (!validatePhone()) return;
+
+//     const savedPhone = localStorage.getItem("bookingPhone");
+
+//     if (managePhone.value === savedPhone) {
+//         localStorage.clear();
+//         alert("Booking canceled!");
+//     } else {
+//         alert("No booking found");
+//     }
+// });
+
 cancelBtn.addEventListener("click", () => {
     if (!validatePhone()) return;
 
     const savedPhone = localStorage.getItem("bookingPhone");
 
     if (managePhone.value === savedPhone) {
-        localStorage.clear();
+        localStorage.removeItem("bookingPhone");
+        localStorage.removeItem("bookingTime");
+
+        // CLEAR INPUT
+        managePhone.value = "";
+
         alert("Booking canceled!");
     } else {
         alert("No booking found");
     }
+    modifyPanel.style.display = "none";
 });
