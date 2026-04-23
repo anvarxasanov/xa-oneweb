@@ -56,68 +56,85 @@
     </header>
 
     <main>
-
+        
         <!-- ================= BOOKING SECTION ================= -->
-        <!-- This section allows users to book a service -->
         <section class="booking">
             <div class="container booking__container">
 
-                <!-- Booking content -->
                 <div class="booking__content">
                     <h2 class="booking__title">Book a Consultation</h2>
-                    <p class="booking__text">Fill out the form and our team will contact you shortly.</p>
+                    <p class="booking__text">
+                    Fill out the form and our team will contact you shortly.
+                    </p>
 
-                    <!-- Booking form -->
                     <form class="booking__form">
 
+                        <!-- NAME -->
                         <div class="booking__group">
-                            <input type="text" placeholder="Your Name" class="input-name">
+                            <input type="text" class="input-name" placeholder="Your Name">
                             <small class="error-message"></small>
                         </div>
 
+                        <!-- PHONE -->
                         <div class="booking__group">
-                            <input type="email" placeholder="Email Address" class="input-email">
+                            <input type="text" class="input-phone" placeholder="Phone Number">
                             <small class="error-message"></small>
                         </div>
 
-                        <div class="booking__group">
-                            <input type="text" placeholder="Phone Number" class="input-phone">
-                            <small class="error-message"></small>
-                        </div>
-
+                        <!-- SERVICE -->
                         <div class="booking__group">
                             <select class="input-service">
-                            <option selected>Select Service</option>
+                            <option value="">Select Service</option>
                             <option>Landing Page</option>
                             <option>Corporate Website</option>
-                            <option>Blog Website</option>
-                            <option>E-Commerce Website</option>
+                            <option>Blog</option>
                             </select>
                             <small class="error-message"></small>
                         </div>
 
-                        <button class="button booking__btn">Book a consultation</button>
+                        <!-- TIME -->
+                        <div class="booking__group">
+                            <input type="time" class="input-time">
+                            <small class="error-message"></small>
+                        </div>
+
+                        <button type="submit" class="button booking__btn">
+                            Book a consultation
+                        </button>
 
                     </form>
                 </div>
 
             </div>
         </section>
+
+        <!-- ================= MANAGE BOOKING ================= -->
         <section class="booking-manage">
             <div class="container">
 
                 <div class="booking-manage__box">
-                <h3 class="booking-manage__title">Already have a booking?</h3>
+                    <h3>Already have a booking?</h3>
 
-                <div class="booking-manage__form">
-
-                    <input type="email" placeholder="Email" class="manage-email">
-                    <input type="text" placeholder="Phone number" class="manage-id">
+                    <div class="booking__group">
+                        <input type="text" class="manage-phone" placeholder="Phone number">
+                        <small class="error-message"></small>
+                    </div>
 
                     <button class="button manage-modify">Modify</button>
                     <button class="button manage-cancel">Cancel</button>
 
-                </div>
+                    <!-- HIDDEN MODIFY PANEL -->
+                    <div class="modify-panel" style="display: none;">
+                        <p class="current-time-text"></p>
+
+                        <div class="booking__group">
+                            <input type="time" class="new-time">
+                            <small class="error-message"></small>
+                        </div>
+
+                        <button class="button confirm-modify">Confirm Time Change</button>
+                    </div>
+
                 </div>
 
             </div>
