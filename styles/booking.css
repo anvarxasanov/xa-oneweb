@@ -32,6 +32,16 @@
   border: 1px solid #ddd;
 }
 
+.booking__group input[type="time"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-family: inherit;
+}
+
 /* ERROR */
 .input-error {
   border: 1px solid red;
