@@ -48,8 +48,13 @@
 
 /* FIX TIME INPUT */
 .booking__group input[type="time"] {
-  appearance: none;
-  -webkit-appearance: none;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  color: var(--text-primary);
 }
 
 /* ================= TEXT ================= */
