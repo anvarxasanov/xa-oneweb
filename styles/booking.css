@@ -1,7 +1,8 @@
-/* BOOKING */
+/* ================= BOOKING ================= */
+
 .booking {
-  padding: 80px 0;
-  background-color: var(--surface);
+  padding: 80px 0 0;
+  background: var(--surface);
 }
 
 .booking__container {
@@ -15,64 +16,108 @@
 }
 
 .booking__form {
-  background: #fff;
+  background: var(--background);
   padding: 25px;
   border-radius: 12px;
 }
 
 .booking__group {
+  width: 100%;
   margin-bottom: 15px;
 }
 
+/* INPUTS */
 .booking__group input,
 .booking__group select {
   width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-}
-
-.booking__group input[type="time"] {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 100%;
+  box-sizing: border-box;
   padding: 12px;
   border-radius: 8px;
   border: 1px solid #ddd;
   font-family: inherit;
 }
 
-/* ERROR */
+/* FIX TIME INPUT */
+.booking__group input[type="time"] {
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* ================= TEXT ================= */
+
+.booking__title {
+  margin-bottom: 10px;
+}
+
+.booking__text {
+  margin-bottom: 25px;
+}
+
+/* ================= ERROR ================= */
+
 .input-error {
-  border: 1px solid red;
+  border-color: var(--error);
 }
 
 .error-message {
-  color: red;
-  font-size: 12px;
   display: none;
+  font-size: 12px;
+  color: var(--error);
+  margin-top: 5px;
 }
 
 .error-message.active {
   display: block;
 }
 
-/* MANAGE */
+/* ================= MANAGE ================= */
+
 .booking-manage {
-  padding: 40px 0;
+  padding: 60px 0;
+}
+
+/* CENTER + SAME WIDTH */
+.booking-manage .container {
+  display: flex;
+  justify-content: center;
 }
 
 .booking-manage__box {
-  background: var(--surface);
+  width: 100%;
+  max-width: 600px;
+  background: var(--background);
   padding: 25px;
   border-radius: 12px;
 }
 
-.modify-panel {
-  margin-top: 20px;
+/* BUTTONS */
+.booking-manage__box .button {
+  margin-right: 10px;
 }
 
 .manage-cancel {
   border-color: red;
   color: red;
+}
+
+/* MODIFY PANEL */
+.modify-panel {
+  margin-top: 20px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+  .booking__form,
+  .booking-manage__box {
+    padding: 20px;
+  }
+
+  /* buttons column */
+  .booking-manage__box .button {
+    width: 100%;
+    margin: 10px 0 0 0;
+  }
+
 }
