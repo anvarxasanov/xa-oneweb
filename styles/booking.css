@@ -1,5 +1,4 @@
-/* ================= BOOKING SECTION ================= */
-
+/* BOOKING */
 .booking {
   padding: 80px 0;
   background-color: var(--surface);
@@ -15,22 +14,10 @@
   max-width: 600px;
 }
 
-.booking__title {
-  font-size: 32px;
-  margin-bottom: 10px;
-  color: var(--text-primary);
-}
-
-.booking__text {
-  margin-bottom: 25px;
-  color: var(--text-secondary);
-}
-
 .booking__form {
-  background: var(--background);
+  background: #fff;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
 .booking__group {
@@ -38,96 +25,44 @@
 }
 
 .booking__group input,
-.booking__group select,
-.booking__group textarea {
+.booking__group select {
   width: 100%;
   padding: 12px;
   border-radius: 8px;
   border: 1px solid #ddd;
-  font-family: inherit;
-  box-sizing: border-box;
-}
-.booking__group textarea {
-    resize: none;
-}
-.booking__group input:focus,
-.booking__group select:focus,
-.booking__group textarea:focus {
-  outline: none;
-  border-color: var(--primary);
 }
 
-.booking__btn {
-  width: 100%;
-  background-color: var(--primary);
-  color: var(--background);
-  border-color: var(--primary);
-}
-
-/* ERROR STATE */
+/* ERROR */
 .input-error {
-  border: 1px solid var(--error);
+  border: 1px solid red;
 }
 
 .error-message {
-  color: var(--error);
+  color: red;
   font-size: 12px;
-  margin-top: 5px;
   display: none;
 }
 
-/* show error */
 .error-message.active {
   display: block;
 }
 
+/* MANAGE */
 .booking-manage {
-  padding: 0 0 40px;
+  padding: 40px 0;
 }
 
 .booking-manage__box {
-  background-color: var(--surface);
-  border-radius: 16px;
+  background: var(--surface);
+  padding: 25px;
+  border-radius: 12px;
 }
 
-.booking-manage__title {
-  margin-bottom: 20px;
-  font-size: 28px;
-  color: var(--text-primary);
-}
-
-.booking-manage__form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-}
-
-.booking-manage__form input {
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-}
-
-.manage-modify {
-  background-color: #e5e7eb;
+.modify-panel {
+  margin-top: 20px;
 }
 
 .manage-cancel {
-  color: red;
   border-color: red;
-}
-
-@media (max-width: 600px) {
-  .booking__title {
-    font-size: 28px;
-  }
-  .booking-manage__title {
-    text-align: center;
-    font-size: 24px;
-  }
-
-  .booking-manage__form {
-    display: flex;
-    flex-direction: column;
-  }
+  color: red;
 }
