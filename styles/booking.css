@@ -15,14 +15,8 @@
   max-width: 600px;
 }
 
-/* .booking__form {
-  background: var(--background);
-  padding: 25px;
-  border-radius: 12px;
-} */
-
 .booking__form {
-  overflow: visible; /* важно */
+  overflow: visible;
 }
 .booking__btn {
   display: block;

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OneWeb</title>
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/contact.css">
 </head>
 <body>
     <header class="site-header">
@@ -53,8 +54,91 @@
         </div>
     </header>
 
-    <main></main>
+    <main>
+       <section class="contact-section">
+            <div class="contact-container">
+            <!-- Chap qism (Contact info) -->
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <p>Reach out to us through any of these channels. We're here to help!</p>
+
+                <div class="info-box">
+                    <div class="info-item">
+                        <span>📧</span>
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:hello@oneweb.com">hello@oneweb.com</a>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <span>📞</span>
+                        <div>
+                            <h4>Phone</h4>
+                            <a href="tel:+18001234567">+1 (800) 123-4567</a>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <span>💬</span>
+                        <div>
+                            <h4>Telegram Support</h4>
+                            <a href="[t.me](https://t.me/xasanov_a87)" target="_blank">@xasanov_a87</a>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <span>🕒</span>
+                        <div>
+                            <h4>Working Hours</h4>
+                            <p>Mon–Fri, 9:00–18:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="socials">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><img src="[cdn-icons-png.flaticon.com](https://cdn-icons-png.flaticon.com/512/2111/2111646.png)" alt="Telegram"></a>
+                        <a href="#"><img src="[cdn-icons-png.flaticon.com](https://cdn-icons-png.flaticon.com/512/2111/2111463.png)" alt="Instagram"></a>
+                        <a href="#"><img src="[cdn-icons-png.flaticon.com](https://cdn-icons-png.flaticon.com/512/174/174857.png)" alt="LinkedIn"></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- O‘ng qism (Form) -->
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form id="contactForm">
+                    <label>Name *</label>
+                    <input type="text" id="name" placeholder="Your full name" required />
+
+                    <label>Email *</label>
+                    <input type="email" id="email" placeholder="your@email.com" required />
+
+                    <label>Subject</label>
+                    <select id="subject">
+                        <option>General</option>
+                        <option>Support</option>
+                        <option>Feedback</option>
+                    </select>
+
+                    <label>Message *</label>
+                    <textarea id="message" rows="5" placeholder="Tell us about your project or question..." required></textarea>
+
+                    <div class="checkbox">
+                        <input type="checkbox" id="agree" required />
+                        <label for="agree">I agree to the <a href="#">Privacy Policy</a></label>
+                    </div>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+            </div>
+        </section>
+    </main>
     
+
     <footer class="site-footer">
         <div class="site-footer__container container">
             <div class="site-footer__links">
@@ -128,5 +212,6 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 </html>
