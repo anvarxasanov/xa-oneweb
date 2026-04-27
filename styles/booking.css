@@ -81,7 +81,9 @@
 /* ================= MANAGE ================= */
 
 .booking-manage {
+  width: 100%;
   padding: 60px 0;
+  background: var(--surface);
 }
 
 /* CENTER + SAME WIDTH */
