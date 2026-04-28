@@ -3,80 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OneWeb Services</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/services.css">
+    <title>OneWeb Services</title> <!-- Browser tab title -->
+    <link rel="stylesheet" href="styles/main.css"> <!-- Main styles for header and footer -->
+    <link rel="stylesheet" href="styles/services.css"> <!-- Services page styles -->
 </head>
 <body>
-    <header class="site-header">
-        <div class="site-header__container container">
-            <div class="site-header__logo">
-                <a class="site-header__logo-link" href="index.html">
-                    One<span>Web</span> <img src="images/code-icon.svg" alt="">
+
+    <!-- HEADER  -->
+    <header class="site-header"> <!-- Sticky header wrapper -->
+        <div class="site-header__container container"> <!-- Inner container -->
+
+            <!-- Site logo linking to homepage -->
+            <div class="site-header__logo"> <!-- Logo wrapper -->
+                <a class="site-header__logo-link" href="index.html"> <!-- Clickable logo -->
+                    One<span>Web</span> <!-- "Web" in span to make it blue color -->
+                    <img src="images/code-icon.svg" alt=""> <!-- Logo icon -->
                 </a>
             </div>
 
-            <nav class="site-header__nav navigation">
-                <ul class="site-header__nav-list nav-list">
-                    <li class="nav-list__item"><a href="index.html">Home</a></li>
-                    <li class="nav-list__item active"><a href="services.html">Services</a></li>
-                    <li class="nav-list__item"><a href="booking.html">Booking</a></li>
-                    <li class="nav-list__item"><a href="faq.html">FAQ</a></li>
-                    <li class="nav-list__item"><a href="contact.html">Contact</a></li>
+            <!-- Desktop navigation, hidden on mobile -->
+            <nav class="site-header__nav"> <!-- Navigation wrapper -->
+                <ul class="site-header__nav-list nav-list"> <!-- Horizontal nav list -->
+                    <li class="nav-list__item"><a href="index.html">Home</a></li> <!-- Home page link -->
+                    <li class="nav-list__item active"><a href="services.html">Services</a></li> <!-- Current page - active class highlights it -->
+                    <li class="nav-list__item"><a href="booking.html">Booking</a></li> <!-- Booking page link -->
+                    <li class="nav-list__item"><a href="faq.html">FAQ</a></li> <!-- FAQ page link -->
+                    <li class="nav-list__item"><a href="contact.html">Contact</a></li> <!-- Contact page link -->
                 </ul>
             </nav>
 
-            <div class="site-header__buttons">
-                <button class="telegram-btn"><a href="https://t.me/oneweb_draft_bot" target="_blank"><img src="images/telegram-icon-black.svg" alt=""></a></button>
-                <button class="sign-btn button">Sign In</button>
-                <button class="quote-btn button">Get a Quote</button>
+            <!-- Desktop action buttons - hidden on mobile via CSS -->
+            <div class="site-header__buttons"> <!-- Buttons wrapper -->
+                <button class="telegram-btn"> <!-- Telegram bot button -->
+                    <a href="https://t.me/oneweb_draft_bot" target="_blank"> <!-- Opens Telegram bot in new tab -->
+                        <img src="images/telegram-icon-black.svg" alt=""> <!-- Telegram icon -->
+                    </a>
+                </button>
+                <button class="sign-btn button">Sign In</button> <!-- Sign in button -->
+                <a href="services.html"><button class="quote-btn button">Get a Quote</button></a> <!-- Primary CTA button -->
             </div>
 
-            <button class="site-header__menu-btn"><img src="images/menu-header.svg" alt=""></button>
+            <!-- Burger menu button - visible only on mobile, toggles sidebar via JS -->
+            <button class="site-header__menu-btn">
+                <img src="images/menu-header.svg" alt=""> <!-- Hamburger icon -->
+            </button>
 
-            <div class="site-header__sidebar sidebar">
-                <nav class="sidebar__nav navigation">
-                    <ul class="sidebar__nav-list nav-list">
-                        <li class="sidebar-nav-list__item"><a href="index.html">Home</a></li>
-                        <li class="sidebar-nav-list__item active"><a href="services.html">Services</a></li>
-                        <li class="sidebar-nav-list__item"><a href="booking.html">Booking</a></li>
-                        <li class="sidebar-nav-list__item"><a href="faq.html">FAQ</a></li>
-                        <li class="sidebar-nav-list__item"><a href="contact.html">Contact</a></li>
+            <!-- Mobile sidebar - hidden by default, JS adds --open class to show it -->
+            <div class="site-header__sidebar sidebar"> <!-- Sidebar wrapper -->
+                <nav class="sidebar__nav navigation"> <!-- Sidebar navigation -->
+                    <ul class="sidebar__nav-list nav-list"> <!-- Vertical nav list -->
+                        <li class="sidebar-nav-list__item"><a href="index.html">Home</a></li> <!-- Home link -->
+                        <li class="sidebar-nav-list__item active"><a href="services.html">Services</a></li> <!-- Current page -->
+                        <li class="sidebar-nav-list__item"><a href="booking.html">Booking</a></li> <!-- Booking link -->
+                        <li class="sidebar-nav-list__item"><a href="faq.html">FAQ</a></li> <!-- FAQ link -->
+                        <li class="sidebar-nav-list__item"><a href="contact.html">Contact</a></li> <!-- Contact link -->
                     </ul>
                 </nav>
 
-                <div class="sidebar__buttons">
-                    <button class="sidebar__sign-btn button">Sign In</button>
-                    <button class="sidebar__quote-btn button">Get a Quote</button>
+                <!-- Sidebar CTA buttons -->
+                <div class="sidebar__buttons"> <!-- Buttons wrapper -->
+                    <button class="sidebar__sign-btn button">Sign In</button> <!-- Sign in button -->
+                    <a href="services.html"><button class="quote-btn button">Get a Quote</button></a> <!-- CTA button -->
                 </div>
             </div>
-            <!-- <div class="overlay"></div> -->
+
         </div>
     </header>
 
-    <main class="main-content">
-        <div class="main-content__container container">
-            <h1 class="main-content__title">Build Your Project & Calculate the Price</h1>
-            <h3 class="main-content__subtitle">Follow the same steps as in our Telegram Bot — right here on the website</h3>
+    <!-- MAIN CONTENT -->
+    <main class="main-content"> <!-- Main content wrapper -->
+        <div class="main-content__container container"> <!-- Inner container -->
 
+            <h1 class="main-content__title">Build Your Project & Calculate the Price</h1> <!-- Page heading -->
+            <h3 class="main-content__subtitle">Follow the same steps as in our Telegram Bot — right here on the website</h3> <!-- Page subheading -->
 
-            <div class="main-content__wrapper">
+            <!-- Two-column layout: steps on left, invoice summary on right -->
+            <div class="main-content__wrapper"> <!-- Flex wrapper -->
 
-                <div class="main-content__step-sections">
+                <div class="main-content__step-sections"> <!-- Left column - all 6 steps -->
 
-                    <!-- STEP 1 -->
-                    <section class="main-content__section webtype">
-                        <h2 class="main-content__section-title webtype__title">Step 1: Choose Website Type</h2>
+                    <!-- STEP 1: Website Type -->
+                    <section class="main-content__section webtype"> <!-- Step 1 section -->
+                        <h2 class="main-content__section-title webtype__title">Step 1: Choose Website Type</h2> <!-- title -->
 
-                        <ul class="webtype__list">
+                        <ul class="webtype__list"> <!-- 2-column grid of type cards -->
 
-                            <li class="webtype__list__item webtype-item" id="typeLanding">
-                                <div class="webtype-item__logo"><img src="images/rocket-icon.svg" alt=""></div>
-                                <h4 class="webtype-item__title">Landing</h4>
-                                <p class="webtype-item__subtitle">A quick one-page sales website</p>
-                                <span class="webtype-item__price">from $50</span>
+                            <!-- Landing page card -->
+                            <li class="webtype__list__item webtype-item" id="typeLanding"> <!-- Card item, id used by JS to detect selection -->
+                                <div class="webtype-item__logo"><img src="images/rocket-icon.svg" alt=""></div> <!-- Card icon -->
+                                <h4 class="webtype-item__title">Landing</h4> <!-- Card title -->
+                                <p class="webtype-item__subtitle">A quick one-page sales website</p> <!-- Card description -->
+                                <span class="webtype-item__price">from $50</span> <!-- Starting price -->
                             </li>
 
+                            <!-- Corporate website card -->
                             <li class="webtype__list__item webtype-item" id="typeCorporate">
                                 <div class="webtype-item__logo"><img src="images/building-icon.svg" alt=""></div>
                                 <h4 class="webtype-item__title">Corporate</h4>
@@ -84,6 +104,7 @@
                                 <span class="webtype-item__price">from $80</span>
                             </li>
 
+                            <!-- Blog card -->
                             <li class="webtype__list__item webtype-item" id="typeBlog">
                                 <div class="webtype-item__logo"><img src="images/pen-icon.svg" alt=""></div>
                                 <h4 class="webtype-item__title">Blog</h4>
@@ -91,6 +112,7 @@
                                 <span class="webtype-item__price">from $60</span>
                             </li>
 
+                            <!-- E-commerce card -->
                             <li class="webtype__list__item webtype-item" id="typeEcommerce">
                                 <div class="webtype-item__logo"><img src="images/shopping-cart-icon.svg" alt=""></div>
                                 <h4 class="webtype-item__title">E-Commerce</h4>
@@ -101,60 +123,63 @@
                         </ul>
                     </section>
 
-                    <!-- STEP 2 -->
-                    <section class="main-content__section describe">
-                        <h2 class="main-content__section-title describe__title">Step 2: Describe Your Business</h2>
-                        <h4 class="main-content__section-subtitle">This helps us better understand your goals and suggest the right solution</h4>
+                    <!-- STEP 2: Business Description -->
+                    <section class="main-content__section describe"> <!-- Step 2 section -->
+                        <h2 class="main-content__section-title describe__title">Step 2: Describe Your Business</h2> <!-- Step title -->
+                        <h4 class="main-content__section-subtitle">This helps us better understand your goals and suggest the right solution</h4> <!-- Helper text -->
 
-                        <form class="describe__form" action="GET">
+                        <form class="describe__form" action="GET"> <!-- Form wrapper -->
+                            <!-- 8-row textarea for user's business description -->
                             <textarea class="describe__form-textarea" name="" id="" rows="8" placeholder="Write a short description of your business..."></textarea>
                         </form>
                     </section>
 
-                    <!-- STEP 3 -->
-                    <section class="main-content__section deadline">
-                        <h2 class="main-content__section-title deadline__title">Step 3: Choose Deadline</h2>
+                    <!-- STEP 3: Deadline - 2 cards -->
+                    <section class="main-content__section deadline"> <!-- Step 3 section -->
+                        <h2 class="main-content__section-title deadline__title">Step 3: Choose Deadline</h2> <!-- Step title -->
 
-                        <ul class="deadline__list">
+                        <ul class="deadline__list"> <!-- 2-column grid -->
 
-                            <li class="deadline__list__item deadline-item" id="standardDeadline">
-                                <div class="deadline-item__logo"><img src="images/clock-icon.svg" alt=""></div>
-                                <h4 class="deadline-item__title">Standard - 14 days</h4>
-                                <span class="deadline-item__price">Basic price</span>
+                            <!-- Standard deadline card, no extra cost -->
+                            <li class="deadline__list__item deadline-item" id="standardDeadline"> <!-- Card item, id used in JS -->
+                                <div class="deadline-item__logo"><img src="images/clock-icon.svg" alt=""></div> <!-- Clock icon -->
+                                <h4 class="deadline-item__title">Standard - 14 days</h4> <!-- Deadline label -->
+                                <span class="deadline-item__price">Basic price</span> <!-- No price(free) -->
                             </li>
 
+                            <!-- Express deadline card, adds $15 to total -->
                             <li class="deadline__list__item deadline-item" id="expressDeadline">
-                                <div class="deadline-item__logo"><img src="images/lightning-icon.svg" alt=""></div>
+                                <div class="deadline-item__logo"><img src="images/lightning-icon.svg" alt=""></div> <!-- Lightning icon -->
                                 <h4 class="deadline-item__title">Express - 7 days</h4>
-                                <span class="deadline-item__price">+$15</span>
-                            </li></ul>
-                        
+                                <span class="deadline-item__price">+$15</span> <!-- price +$15 -->
+                            </li>
+
+                        </ul>
                     </section>
 
-                    <!-- STEP 4 -->
-                     <section class="main-content__section package">
-                        <h2 class="main-content__section-title package__title">Step 4: Choose Package</h2>
+                    <!-- STEP 4: Package - Basic (free), Standard (+$125), Premium (+$170) -->
+                    <section class="main-content__section package"> <!-- Step 4 section -->
+                        <h2 class="main-content__section-title package__title">Step 4: Choose Package</h2> <!-- Step title -->
 
-                        <ul class="package__list">
+                        <ul class="package__list"> <!-- 3-column grid -->
 
-                            <li class="package__item" id="basicPack">
-                                <h4 class="package__item-title">Basic</h4>
-
-                                <div class="package__item-features">
-                                    <p class="package-feature"><span class="tick"><img src="images/check-icon.svg" alt=""></span>Basic functionality</p>
-                                    <p class="package-feature"><span class="cross"><img src="images/x-icon.svg" alt=""></span>SMS / Admin Panel</p>
-                                    <p class="package-feature"><span class="cross"><img src="images/x-icon.svg" alt=""></span>SEO optimization</p>
-                                    <p class="package-feature"><span class="cross"><img src="images/x-icon.svg" alt=""></span>Multilingual</p>
-                                    <p class="package-feature"><span class="cross"><img src="images/x-icon.svg" alt=""></span>Personal account</p>
-                                    <p class="package-feature"><span class="tick"><img src="images/check-icon.svg" alt=""></span>Support: 1 month</p>
-                                    <p class="package__item-price invisible">+ $0</p>
+                            <!-- Basic package - free, limited features -->
+                            <li class="package__item" id="basicPack"> <!-- Card item, id used in JS -->
+                                <h4 class="package__item-title">Basic</h4> <!-- Package name -->
+                                <div class="package__item-features"> <!-- Features list -->
+                                    <p class="package-feature"><span class="tick"><img src="images/check-icon.svg" alt=""></span>Basic functionality</p> <!-- Included feature -->
+                                    <p class="package-feature"><span class="cross"><img src="images/x-icon.svg" alt=""></span>SMS / Admin Panel</p> <!-- Not included -->
+                                    <p class="package-feature"><span class="cross"><img src="images/x-icon.svg" alt=""></span>SEO optimization</p> <!-- Not included -->
+                                    <p class="package-feature"><span class="cross"><img src="images/x-icon.svg" alt=""></span>Multilingual</p> <!-- Not included -->
+                                    <p class="package-feature"><span class="cross"><img src="images/x-icon.svg" alt=""></span>Personal account</p> <!-- Not included -->
+                                    <p class="package-feature"><span class="tick"><img src="images/check-icon.svg" alt=""></span>Support: 1 month</p> <!-- Included -->
+                                    <p class="package__item-price invisible">+ $0</p> <!-- Hidden price placeholder - keeps card height consistent with other cards -->
                                 </div>
-                                
                             </li>
 
+                            <!-- Standard package -->
                             <li class="package__item" id="standardPack">
                                 <h4 class="package__item-title">Standard</h4>
-
                                 <div class="package__item-features">
                                     <p class="package-feature"><span class="tick"><img src="images/check-icon.svg" alt=""></span>Basic functionality</p>
                                     <p class="package-feature"><span class="tick"><img src="images/check-icon.svg" alt=""></span>SMS / Admin Panel</p>
@@ -162,14 +187,13 @@
                                     <p class="package-feature"><span class="cross"><img src="images/x-icon.svg" alt=""></span>Multilingual</p>
                                     <p class="package-feature"><span class="cross"><img src="images/x-icon.svg" alt=""></span>Personal account</p>
                                     <p class="package-feature"><span class="tick"><img src="images/check-icon.svg" alt=""></span>Support: 3 month</p>
-                                    <p class="package__item-price">+ $125</p>
+                                    <p class="package__item-price">+ $125</p> <!-- Package price $125-->
                                 </div>
-
                             </li>
 
+                            <!-- Premium package - all features included -->
                             <li class="package__item" id="premiumPack">
                                 <h4 class="package__item-title">Premium</h4>
-
                                 <div class="package__item-features">
                                     <p class="package-feature"><span class="tick"><img src="images/check-icon.svg" alt=""></span>Basic functionality</p>
                                     <p class="package-feature"><span class="tick"><img src="images/check-icon.svg" alt=""></span>SMS / Admin Panel</p>
@@ -177,104 +201,104 @@
                                     <p class="package-feature"><span class="tick"><img src="images/check-icon.svg" alt=""></span>Multilingual</p>
                                     <p class="package-feature"><span class="tick"><img src="images/check-icon.svg" alt=""></span>Personal account</p>
                                     <p class="package-feature"><span class="tick"><img src="images/check-icon.svg" alt=""></span>Support: 6 month</p>
-                                    <p class="package__item-price">+ $170</p>
+                                    <p class="package__item-price">+ $170</p> <!-- Package price $170-->
                                 </div>
-
                             </li>
 
                         </ul>
-                     </section>
-                
-                     <!-- STEP 5 -->
-                    <section class="main-content__section pages">
-                        <h2 class="main-content__section-title pages__title">Step 5: Number of Pages</h2>
-                        <h4 class="main-content__section-subtitle">First 5 pages included. Extra pages: $20 each</h4>
-
-                        <div class="pages__counter">
-                            <input class="pages__input" type="range" min="1" max="15" value="5" id="slider">
-                            <label class="pages__label" for="slider">5</label>
-                        </div>
-                        <p class="pages__extra"></p>
                     </section>
 
-                     <!-- STEP 6 -->
-                    <section class="main-content__section promocode">
-                        <h2 class="main-content__section-title promocode__title">Step 6: Promo Code (Optional)</h2>
+                    <!-- STEP 5: Number of Pages - slider from 1-15, first 5 free, $20 each after -->
+                    <section class="main-content__section pages"> <!-- Step 5 section -->
+                        <h2 class="main-content__section-title pages__title">Step 5: Number of Pages</h2> <!-- Step title -->
+                        <h4 class="main-content__section-subtitle">First 5 pages included. Extra pages: $20 each</h4> <!-- Pricing rule -->
 
-                        <div class="promocode__form">
-                            <input class="promocode__input" type="text" placeholder="Enter promo code">
-                            <button class="promocode__btn button">Apply</button>
+                        <div class="pages__counter"> <!-- Slider and label wrapper -->
+                            <input class="pages__input" type="range" min="1" max="15" value="5" id="slider"> <!-- Range slider, default 5, JS reads this value -->
+                            <label class="pages__label" for="slider">5</label> <!-- Shows current slider value, updated by JS -->
                         </div>
-                        <div class="promocode__notification"></div>
-                        <p class="promocode__hint">Try: START10, VIP20, or NEW5</p>
+                        <p class="pages__extra"></p> <!-- Extra cost text, filled by JS when pages > 5 -->
                     </section>
-                
-                    </div>
-                
 
-                
-                <div class="main-content__invoice invoice">
-                    <h2 class="invoice__title">Price Summary</h2>
+                    <!-- STEP 6: Promo Code - optional -->
+                    <section class="main-content__section promocode"> <!-- Step 6 section -->
+                        <h2 class="main-content__section-title promocode__title">Step 6: Promo Code (Optional)</h2> <!-- Step title -->
 
-                    <div class="invoice__variables">
-                        <p class="invoice__type"></p>
-                        <p class="invoice__deadline"></p>
-                        <p class="invoice__package"></p>
-                        <p class="invoice__pages"></p>
-                        <p class="invoice__promocode"></p>
-                    </div>
-
-                    <div class="invoice__summary">
-                        <p class="invoice__total">Total: <span class="invoice__total-price">$0</span></p>
-                        <p class="invoice__deadline-st"></p>
-                    </div>
-
-                    <button class="invoice__btn button">Book a Consultation</button>
+                        <div class="promocode__form"> <!-- Input and button row -->
+                            <input class="promocode__input" type="text" placeholder="Enter promo code"> <!-- Text input for promo code -->
+                            <button class="promocode__btn button">Apply</button> <!-- Button to validate promo code in JS -->
+                        </div>
+                        <div class="promocode__notification"></div> <!-- Empty div - JS gives success or error message here -->
+                        <p class="promocode__hint">Try: START10, VIP20, or NEW5</p> <!-- Hint showing available codes -->
+                    </section>
 
                 </div>
 
+                <!-- INVOICE SUMMARY - sticky panel, all values updated in real time by calculateTotal() -->
+                <div class="main-content__invoice invoice"> <!-- Right column - price summary card -->
+                    <h2 class="invoice__title">Price Summary</h2> <!-- Summary title -->
+
+                    <!-- Line items - all empty by default, JS fills them when user makes selections -->
+                    <div class="invoice__variables"> <!-- Line items wrapper -->
+                        <p class="invoice__type"></p> <!-- Website type line -->
+                        <p class="invoice__deadline"></p> <!-- Deadline surcharge line -->
+                        <p class="invoice__package"></p> <!-- Package line -->
+                        <p class="invoice__pages"></p> <!-- Extra pages line -->
+                        <p class="invoice__promocode"></p> <!-- Promo discount line -->
+                    </div>
+
+                    <div class="invoice__summary"> <!-- Total section -->
+                        <p class="invoice__total">Total: <span class="invoice__total-price">$0</span></p> <!-- Total starts at $0, updated by JS -->
+                        <p class="invoice__deadline-st"></p> <!-- Shows "Deadline: 14 days" for standard deadline -->
+                    </div>
+
+                    <button class="invoice__btn button">Book a Consultation</button> <!-- CTA button -->
+                </div>
+
             </div>
-
-
         </div>
     </main>
 
-    <footer class="site-footer">
-        <div class="site-footer__container container">
-            <div class="site-footer__links">
+    <!-- FOOTER -->
+    <footer class="site-footer"> <!-- Footer wrapper -->
+        <div class="site-footer__container container"> <!-- Inner container -->
+            <div class="site-footer__links"> <!-- Top section with 4 columns -->
 
-                <div class="site-footer__info">
-                    <div class="site-footer__logo">
-                        <a class="site-footer__logo-link" href="index.html">
-                            One<span>Web</span> <img src="images/code-icon.svg" alt="">
+                <!-- Column 1: Brand info and socials -->
+                <div class="site-footer__info"> <!-- Info column -->
+                    <div class="site-footer__logo"> <!-- Logo wrapper -->
+                        <a class="site-footer__logo-link" href="index.html"> <!-- Logo link to homepage -->
+                            One<span>Web</span> <img src="images/code-icon.svg" alt=""> <!-- Logo text and icon -->
                         </a>
                     </div>
-
-                    <p class="site-footer__text">Building professional websites for businesses of all sizes — powered by the latest technologies.</p>
-
-                    <div class="site-footer__socials">
-                        <ul class="site-footer__socials-list socials-list">
-                            <li class="socials-list__item"><a href="https://t.me/oneweb_draft_bot" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-send-icon lucide-send"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11zM21.854 2.147l-10.94 10.939"/></svg></a></li>
+                    <p class="site-footer__text">Building professional websites for businesses of all sizes — powered by the latest technologies.</p> <!-- Brand description -->
+                    <div class="site-footer__socials"> <!-- Social icons wrapper -->
+                        <ul class="site-footer__socials-list socials-list"> <!-- Social links list -->
+                            <!-- Telegram bot link -->
+                            <li class="socials-list__item"><a href="https://t.me/oneweb_draft_bot" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-send-icon lucide-send"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11zM21.854 2.147l-10.94 10.939"/></svg></a></li> <!-- Telegram SVG icon -->
+                            <!-- Instagram link -->
                             <li class="socials-list__item"><a href="https://www.instagram.com/oneweb_studio/" target="_blank"><img src="images/instagram.svg" alt="instagram icon"></a></li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="site-footer__nav">
-                    <ul class="site-footer__nav-list nav-list">
-                        <p class="site-footer__title">Quick Links</p>
-                        <li class="footer-nav-list__item"><a href="index.html">Home</a></li>
-                        <li class="footer-nav-list__item"><a href="services.html">Services</a></li>
-                        <li class="footer-nav-list__item"><a href="booking.html">Booking</a></li>
-                        <li class="footer-nav-list__item"><a href="faq.html">FAQ</a></li>
-                        <li class="footer-nav-list__item"><a href="contact.html">Contact</a></li>
+                <!-- Column 2: Quick navigation links -->
+                <div class="site-footer__nav"> <!-- Nav column -->
+                    <ul class="site-footer__nav-list nav-list"> <!-- Nav list -->
+                        <p class="site-footer__title">Quick Links</p> <!-- Column title -->
+                        <li class="footer-nav-list__item"><a href="index.html">Home</a></li> <!-- Home link -->
+                        <li class="footer-nav-list__item"><a href="services.html">Services</a></li> <!-- Services link -->
+                        <li class="footer-nav-list__item"><a href="booking.html">Booking</a></li> <!-- Booking link -->
+                        <li class="footer-nav-list__item"><a href="faq.html">FAQ</a></li> <!-- FAQ link -->
+                        <li class="footer-nav-list__item"><a href="contact.html">Contact</a></li> <!-- Contact link -->
                     </ul>
                 </div>
 
-                <div class="site-footer__services">
-                    <ul class="site-footer__nav-list nav-list">
-                        <p class="site-footer__title">Our Services</p>
-                        <li class="footer-nav-list__item"><a href="services.html">Landing Page</a></li>
+                <!-- Column 3: Services list -->
+                <div class="site-footer__services"> <!-- Services column -->
+                    <ul class="site-footer__nav-list nav-list"> <!-- Services list -->
+                        <p class="site-footer__title">Our Services</p> <!-- Column title -->
+                        <li class="footer-nav-list__item"><a href="services.html">Landing Page</a></li> <!-- Service link -->
                         <li class="footer-nav-list__item"><a href="services.html">Corporate Website</a></li>
                         <li class="footer-nav-list__item"><a href="services.html">Blog</a></li>
                         <li class="footer-nav-list__item"><a href="services.html">E-Commerce Store</a></li>
@@ -282,36 +306,41 @@
                     </ul>
                 </div>
 
-                <div class="site-footer__contacts">
-                    <ul class="site-footer__nav-list nav-list">
-                        <p class="site-footer__title">Get in Touch</p>
-                        <li class="footer-nav-list__item"><a href="">📧 oneweb@info.com</a></li>
-                        <li class="footer-nav-list__item"><a href="">📞 +998-99-907-52-07</a></li>
-                        <li class="footer-nav-list__item">💬 Telegram: <a href="https://t.me/xasanov_a87" target="_blank">@xasanov_a87</a></li>
-                        <li class="footer-nav-list__item">🕐 Mon-Fri, 9:00-18:00</li>
-                        <li class="footer-nav-list__item"><button class="site-footer__booking-btn button">Book a Free Call</button></li>
+                <!-- Column 4: Contact details -->
+                <div class="site-footer__contacts"> <!-- Contacts column -->
+                    <ul class="site-footer__nav-list nav-list"> <!-- Contacts list -->
+                        <p class="site-footer__title">Get in Touch</p> <!-- Column title -->
+                        <li class="footer-nav-list__item"><a href="">📧 oneweb@info.com</a></li> <!-- Email -->
+                        <li class="footer-nav-list__item"><a href="">📞 +998-99-907-52-07</a></li> <!-- Phone -->
+                        <li class="footer-nav-list__item">💬 Telegram: <a href="https://t.me/xasanov_a87" target="_blank">@xasanov_a87</a></li> <!-- Telegram contact -->
+                        <li class="footer-nav-list__item">🕐 Mon-Fri, 9:00-18:00</li> <!-- Working hours -->
+                        <li class="footer-nav-list__item"><a href="booking.html"><button class="site-footer__booking-btn button">Book a Free Call</button></a></li> <!-- Booking CTA -->
                     </ul>
                 </div>
+
             </div>
 
-            <div class="site-footer__promo">
-                <p class="site-footer__promo-text">🎁 Have a promo code? Use it during price calculation and get your discount!</p>
-                <button class="site-footer__promo-btn button">Calculate Price →</button>
+            <!-- Promo banner - reminding users about promo codes -->
+            <div class="site-footer__promo"> <!-- Promo banner wrapper -->
+                <p class="site-footer__promo-text">🎁 Have a promo code? Use it during price calculation and get your discount!</p> <!-- Promo text -->
+                <a href="services.html"><button class="site-footer__promo-btn button">Calculate Price →</button></a> <!-- Link to services page -->
             </div>
 
-            <div class="site-footer__policy">
-                <p class="site-footer__rights">© 2025 OneWeb. All rights reserved.</p>
-                <p class="site-footer__love">Made with ❤️ by OneWeb Team</p>
-                <div class="site-footer__policy-links">
-                    <a class="policy-links__item" href="">Privacy Policy</a>
-                    <a class="policy-links__item" href="">Terms of Service</a>
+            <!-- Bottom bar - copyright and legal links -->
+            <div class="site-footer__policy"> <!-- Policy bar wrapper -->
+                <p class="site-footer__rights">© 2025 OneWeb. All rights reserved.</p> <!-- Copyright text -->
+                <p class="site-footer__love">Made with ❤️ by OneWeb Team</p> <!-- Team credit -->
+                <div class="site-footer__policy-links"> <!-- Legal links wrapper -->
+                    <a class="policy-links__item" href="">Privacy Policy</a> <!-- Privacy policy link -->
+                    <a class="policy-links__item" href="">Terms of Service</a> <!-- Terms link -->
                 </div>
             </div>
 
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
-    <script src="js/services.js"></script>
+    <script src="js/main.js"></script> <!-- Main JS - burger menu logic, loads first -->
+    <script src="js/services.js"></script> <!-- Services JS, price calculator logic -->
+
 </body>
 </html>
