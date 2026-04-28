@@ -1,426 +1,487 @@
 :root {
-    --background: #fff;
-    --primary: #146ef5;
-    --surface: #f5f7fa;
-    --highlight: #00E5C3;
-    --text-primary: #1d1d1d;
-    --text-secondary: #6b7280;
-    --success: #16a34a;
-    --error: #dc2626;
-    --primaty-dark: #0a0f1e;
-    --services-bgc: #f4f7ff;
+    --background: #fff; /* White - used for backgrounds and text on dark surfaces */
+    --primary: #146ef5; /* Blue - main brand color for buttons and accents */
+    --surface: #f5f7fa; /* Light gray - used for sidebar and card backgrounds */
+    --highlight: #00E5C3; /* This color used for prices and positive values */
+    --text-primary: #1d1d1d; /* Black - main text color */
+    --text-secondary: #6b7280; /* Gray - used for subtitles and secondary text */
+    --success: #16a34a; /* Green - used for success messages */
+    --error: #dc2626; /* Red - used for error messages */
+    --primaty-dark: #0a0f1e; /* Dark - used for footer background */
+    --services-bgc: #f4f7ff; /* Light blue - background for services page */
 }
 
+/* Full page height so footer stays at bottom */
 html {
-    height: 100%;
+    height: 100%; /* Makes html element fill the full viewport height */
 }
 
+/* Makes main content grow to fill all available space */
 main {
-    flex: 1;
+    flex: 1; /* Pushes footer to bottom by filling remaining vertical space */
 }
 
-
-
+/* Flexbox column layout so footer is always pushed to bottom */
 body {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-    min-height: 100%;
-    font-family: 'Inter', 'Plus Jakarta Sans', Arial, Helvetica, sans-serif;
+    display: flex; /* Enables flexbox layout */
+    flex-direction: column; /* Stacks header, main, footer vertically */
+    padding: 0; /* Removes default browser padding */
+    margin: 0; /* Removes default browser margin */
+    min-height: 100%; /* Ensure body fills at least full viewport height */
+    font-family: 'Inter', 'Plus Jakarta Sans', Arial, Helvetica, sans-serif; /* Font families */
 }
 
-
+/* Global link hover color */
 a:hover {
-    color: var(--primary);
+    color: var(--primary); /* All links turn blue on hover */
 }
 
+/* Reusable button base style */
 .button {
-    padding: 10px 15px;
-    border-radius: 8px;
-    border: 1px solid #0A0F1E;
-    background-color: transparent;
-    cursor: pointer;
-}
-button:hover {
-    opacity: 0.85;
+    padding: 10px 15px; /* Inner spacing */
+    border-radius: 8px; /* Rounded corners */
+    border: 1px solid #0A0F1E; /* Dark border */
+    background-color: transparent; /* No fill by default */
+    cursor: pointer; /* Shows hand cursor on hover */
 }
 
+/* Slight fade on all button hovers */
+button:hover {
+    opacity: 0.85; /* Slightly fades button on hover for feedback */
+}
+
+/* Centered page wrapper with max width */
 .container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 20px;
+    max-width: 1400px; /* Prevents content from stretching too wide on large screens */
+    margin: 0 auto; /* Centers container horizontally */
+    padding: 0 20px; /* Side padding so content doesn't touch screen edges */
 }
 
 
 /* HEADER */
 .site-header {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 62px;
-    z-index: 10000;
-    background-color: var(--background);
-}
-.site-header__container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 15px;
-}
-.site-header__logo {
-    z-index: 1100;
-}
-.site-header__logo-link {
-    display: flex;
-    align-items: center;
-    color: var(--text-primary);
-    text-decoration: none;
-    font-size: 22px;
-}
-.site-header__logo span {
-    margin-right: 8px;
-    color: var(--primary);
+    position: sticky; /* Header sticks to top while user scrolls */
+    top: 0; /* Sticks to the very top of viewport */
+    left: 0; /* Starts from left edge */
+    width: 100%; /* Full width */
+    height: 62px; /* Fixed header height */
+    z-index: 10000; /* Above all page content */
+    background-color: var(--background); /* White background */
 }
 
+/* Header inner layout - logo on left, navigation on right */
+.site-header__container {
+    position: relative; /* Needed for sidebar absolute positioning inside it */
+    display: flex; /* Horizontal layout */
+    align-items: center; /* Vertically centers all header items */
+    justify-content: space-between; /* Spreads logo, nav, buttons apart */
+    padding: 10px 15px; /* Inner spacing */
+}
+
+/* Logo above mobile sidebar overlay */
+.site-header__logo {
+    z-index: 1100; /* Keeps logo above the sidebar when it opens */
+}
+
+.site-header__logo-link {
+    display: flex; /* Aligns icon and text horizontally */
+    align-items: center; /* Vertically centers icon with text */
+    color: var(--text-primary); /* Dark text color */
+    text-decoration: none; /* Removes underline */
+    font-size: 22px; /* Logo font size */
+}
+
+/* Blue accent on logo icon */
+.site-header__logo span {
+    margin-right: 8px; /* Space between "Web" and the icon */
+    color: var(--primary); /* "Web" text shown in blue */
+}
+
+/* Horizontal nav list - shown on desktop */
 .site-header__nav-list {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    margin: 0;
-    padding: 0;
+    list-style: none; /* Removes bullet points */
+    display: flex; /* Horizontal layout */
+    align-items: center; /* Vertically centers items */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
 }
 
 .nav-list__item a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 16px;
-    cursor: pointer;
+    color: var(--text-secondary); /* Gray link color */
+    text-decoration: none; /* No underline */
+    font-size: 16px; /* Nav link font size */
+    cursor: pointer; /* Hand cursor */
 }
+
+/* Spacing between nav items except last */
 .nav-list__item:not(:last-child) {
-    margin-right: 30px;
+    margin-right: 30px; /* Gap between nav links */
 }
 
 .nav-list__item a:hover {
-    color: var(--primary);
+    color: var(--primary); /* Links turn blue on hover */
 }
+
+/* Burger menu button - hidden on desktop, shown on mobile */
 .site-header__menu-btn {
-    display: none;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    z-index: 1100;
-    background-color: transparent;
+    display: none; /* Hidden by default, shown via media query on mobile */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    border: 0; /* Removes default border */
+    z-index: 1100; /* Above sidebar overlay */
+    background-color: transparent; /* No background color*/
 }
 
+/* Mobile sidebar - hidden by default, shown when .sidebar--open is added via JS */
 .site-header__sidebar {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 100%;
-    height: 430px;
-    z-index: 1000;
-    /* transform: translateX(100%); */
-    background-color: var(--surface);
+    display: none; /* Hidden until JS adds open class */
+    position: absolute; /* Positioned relative to header container */
+    right: 0; /* Aligned to right edge */
+    top: 0; /* Starts from top of header */
+    width: 100%; /* Full width overlay */
+    height: 430px; /* Fixed sidebar height */
+    z-index: 1000; /* Below burger button but above page content */
+    background-color: var(--surface); /* Light gray background */
 }
 
-
+/* Sidebar nav pushed down to clear the header */
 .sidebar__nav {
-    position: relative;
-    margin-left: 20px;
-    margin-top: 80px;
-}
-.sidebar__nav-list {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    list-style: none;
-}
-.sidebar-nav-list__item a {
-    font-size: 18px;
-    color: var(--text-secondary);
-    text-decoration: none;
+    position: relative; /* Needed for the pseudo-element divider line */
+    margin-left: 20px; /* Left indent */
+    margin-top: 80px; /* Pushes nav below the header row */
 }
 
+/* Vertical nav list inside the sidebar */
+.sidebar__nav-list {
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+    display: flex; /* Flex layout */
+    flex-direction: column; /* Stacks links vertically */
+    align-items: left; /* Aligns links to the left */
+    list-style: none; /* Removes bullet points */
+}
+
+.sidebar-nav-list__item a {
+    font-size: 18px; /* Larger font for mobile readability */
+    color: var(--text-secondary); /* Gray color */
+    text-decoration: none; /* No underline */
+}
+
+/* Active page link shown in darker color */
 .active a {
-    color: var(--text-primary);
+    color: var(--text-primary); /* Current page link shown in dark color */
 }
 
 .sidebar-nav-list__item a:hover {
-    color: var(--primary);
+    color: var(--primary); /* Links turn blue on hover */
 }
+
 .sidebar-nav-list__item:not(:last-child) {
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Spacing between sidebar links */
 }
 
+/* A line below sidebar nav using pseudo element */
 .sidebar__nav-list::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -30px;
-    width: calc(100% - 23px);
-    height: 1px;
-    background: var(--text-secondary);
+    content: ""; /* Required for pseudo-element to render */
+    position: absolute; /* Positioned relative to sidebar nav */
+    left: 0; /* Starts from left edge */
+    bottom: -30px; /* Placed below the last nav item */
+    width: calc(100% - 23px); /* Slightly shorter than full width */
+    height: 1px; /* Thin divider line */
+    background: var(--text-secondary); /* Gray line color */
 }
 
+/* Sidebar action buttons container */
 .sidebar__buttons {
-    margin-top: 45px;
-    padding-left: 20px;
-    width: calc(100% - 40px);
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    margin-top: 45px; /* Space above buttons section */
+    padding-left: 20px; /* Left indent matching nav */
+    width: calc(100% - 40px); /* Full width minus left and right padding */
+    display: flex; /* Flex layout */
+    align-items: center; /* Centers buttons horizontally */
+    flex-direction: column; /* Stacks buttons vertically */
 }
 
 .sidebar__sign-btn {
-    width: 100%;
-    margin-bottom: 15px;
-    font-size: 18px;
-}
-.sidebar__quote-btn {
-    width: 100%;
-    font-size: 18px;
-    border-color: var(--primary);
-    background-color: var(--primary);
-    color: var(--background);
+    width: 100%; /* Full width button */
+    margin-bottom: 15px; /* Space below sign in button */
+    font-size: 18px; /* Button text size */
 }
 
-.site-header__buttons {
-    display: flex;
-    align-items: center;
+/* Primary CTA button in sidebar */
+.sidebar__quote-btn {
+    width: 100%; /* Full width button */
+    font-size: 18px; /* Button text size */
+    border-color: var(--primary); /* Blue border */
+    background-color: var(--primary); /* Blue background */
+    color: var(--background); /* White text */
 }
+
+/* Desktop header buttons container */
+.site-header__buttons {
+    display: flex; /* Horizontal layout */
+    align-items: center; /* Vertically centers buttons */
+}
+
+/* Telegram icon button - no default button styles */
 .telegram-btn {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    background-color: transparent;
-    cursor: pointer;
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+    border: 0; /* Removes default border */
+    background-color: transparent; /* No background */
+    cursor: pointer; /* Hand cursor */
 }
 
 .sign-btn {
-    margin-left: 15px;
-    margin-right: 10px;
-    font-size: 18px;
+    margin-left: 15px; /* Space after telegram button */
+    margin-right: 10px; /* Space before quote button */
+    font-size: 18px; /* Button text size */
 }
+
+/* Primary CTA button in desktop header */
 .quote-btn {
-    font-size: 18px;
-    border-color: var(--primary);
-    background-color: var(--primary);
-    color: var(--background);
+    font-size: 18px; /* Button text size */
+    border-color: var(--primary); /* Blue border */
+    background-color: var(--primary); /* Blue background */
+    color: var(--background); /* White text */
 }
 
 
 /* FOOTER */
 .site-footer {
-    background-color: var(--primaty-dark);
+    background-color: var(--primaty-dark); /* Dark navy background */
 }
+
 .site-footer__container {
-    display: flex;
-    flex-direction: column;
-    padding-top: 40px;
+    display: flex; /* Flex layout */
+    flex-direction: column; /* Stacks sections vertically */
+    padding-top: 40px; /* Space at top of footer */
 }
+
 .site-footer__title {
-    margin-top: 0;
-    font-size: 18px;
-    color: var(--background);
+    margin-top: 0; /* Removes top margin */
+    font-size: 18px; /* Column title size */
+    color: var(--background); /* White text */
 }
+
+/* Footer top section - logo, nav, contacts in a row */
 .site-footer__links {
-    margin-bottom: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    margin-bottom: 35px; /* Space below top section */
+    display: flex; /* Horizontal layout */
+    align-items: center; /* Vertically aligns columns */
+    justify-content: space-between; /* Spreads columns evenly */
 }
+
 .site-footer__info {
-    max-width: 336px;
+    max-width: 336px; /* Limits brand info column width */
 }
+
 .site-footer__logo-link {
-    display: flex;
-    align-items: center;
-    color: var(--background);
-    text-decoration: none;
-    font-size: 22px;
+    display: flex; /* Aligns icon and text */
+    align-items: center; /* Vertically centers icon */
+    color: var(--background); /* White text */
+    text-decoration: none; /* No underline */
+    font-size: 22px; /* Logo font size */
 }
+
 .site-footer__logo span {
-    margin-right: 8px;
-    color: var(--primary);
+    margin-right: 8px; /* Space between "Web" and icon */
+    color: var(--primary); /* Blue accent on "Web" */
 }
 
 .site-footer__text {
-    color: var(--text-secondary);
+    color: var(--text-secondary); /* Gray description text */
 }
+
 .site-footer__socials-list {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    display: flex; /* Horizontal layout */
+    align-items: center; /* Vertically centers icons */
+    list-style: none; /* No bullets */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
 }
+
 .socials-list__item:not(:last-child) {
-    margin-right: 10px;
+    margin-right: 10px; /* Gap between social icons */
 }
+
+/* Vertical nav list in footer columns */
 .site-footer__nav-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
+    list-style: none; /* No bullets */
+    display: flex; /* Flex layout */
+    flex-direction: column; /* Stacks links vertically */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
 }
+
 .footer-nav-list__item:not(:last-child) {
-    margin-bottom: 10px;
+    margin-bottom: 10px; /* Gap between footer links */
 }
+
 .footer-nav-list__item a {
-    text-decoration: none;
-    color: var(--text-secondary);
+    text-decoration: none; /* No underline */
+    color: var(--text-secondary); /* Gray link color */
 }
+
 .footer-nav-list__item a:hover {
-    color: var(--primary);
+    color: var(--primary); /* Links turn blue on hover */
 }
+
 .site-footer__booking-btn {
-    margin-top: 10px;
-    width: 180px;
-    padding: 10px 20px;
-    border-color: var(--primary);
-    color: var(--primary);
+    margin-top: 10px; /* Space above button */
+    width: 180px; /* Fixed button width */
+    padding: 10px 20px; /* Inner spacing */
+    border-color: var(--primary); /* Blue border */
+    color: var(--primary); /* Blue text */
 }
+
 .site-footer__contacts {
-    padding-top: 35px;
+    padding-top: 35px; /* Space above contacts column */
 }
+
 .site-footer__contacts .footer-nav-list__item {
-    color: var(--text-secondary);
+    color: var(--text-secondary); /* Gray text for contact items */
 }
 
-.site-footer__contacts .footer-nav-list__item:nth-child(4) a{
-    color: var(--primary);
+/* Telegram link highlighted in blue */
+.site-footer__contacts .footer-nav-list__item:nth-child(4) a {
+    color: var(--primary); /* 4th contact item (Telegram) shown in blue */
 }
+
+/* Promo banner with semi-transparent blue background */
 .site-footer__promo {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 14px 15px;
-    border-radius: 10px;
-    background-color: rgba(76, 176, 234, 0.18);
+    position: relative; /* Needed for pseudo-element divider */
+    display: flex; /* Horizontal layout */
+    align-items: center; /* Vertically centers text and button */
+    justify-content: space-between; /* Text on left, button on right */
+    padding: 14px 15px; /* Inner spacing */
+    border-radius: 10px; /* Rounded corners */
+    background-color: rgba(76, 176, 234, 0.18); /* Semi-transparent blue */
 }
+
+/* Divider line below promo block using pseudo-element */
 .site-footer__promo::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -35px;
-    width: 100%;
-    height: 1px;
-    background: var(--text-secondary);
+    content: ""; /* Required for pseudo-element to render */
+    position: absolute; /* Positioned relative to promo block */
+    left: 0; /* Starts from left edge */
+    bottom: -35px; /* Placed below the promo block */
+    width: 100%; /* Full width */
+    height: 1px; /* Thin divider line */
+    background: var(--text-secondary); /* Gray line */
 }
+
 .site-footer__promo-text {
-    color: var(--background);
+    color: var(--background); /* White promo text */
 }
+
+/* Primary CTA button inside promo block */
 .site-footer__promo-btn {
-    border-color: var(--primary);
-    background-color: var(--primary);
-    color: var(--background);
+    border-color: var(--primary); /* Blue border */
+    background-color: var(--primary); /* Blue background */
+    color: var(--background); /* White text */
 }
+
+/* Bottom policy bar - copyright and links */
 .site-footer__policy {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 50px;
-    padding-bottom: 15px;
-    color: var(--text-secondary);
+    display: flex; /* Horizontal layout */
+    align-items: center; /* Vertically centers items */
+    justify-content: space-between; /* Spreads items across full width */
+    margin-top: 50px; /* Space above policy bar */
+    padding-bottom: 15px; /* Space below policy bar */
+    color: var(--text-secondary); /* Gray text */
 }
+
 .site-footer__policy-links {
-    display: flex;
-    align-items: center;
+    display: flex; /* Horizontal layout */
+    align-items: center; /* Vertically centers links */
 }
+
 .policy-links__item {
-    text-decoration: none;
-    color: var(--text-secondary);
+    text-decoration: none; /* No underline */
+    color: var(--text-secondary); /* Gray link color */
 }
+
 .policy-links__item:not(:last-child) {
-    margin-right: 10px;
+    margin-right: 10px; /* Gap between policy links */
 }
 
 
-
-
-
-
-
-
-/* RESPONSIVE */
+/*  RESPONSIVE - Breakpoint: 850px */
 @media (max-width: 850px) {
 
-    /* SITE HEADER */
+    /* Hide desktop nav and buttons, show burger menu instead */
     .site-header__nav, .site-header__buttons {
-        display: none;
+        display: none; /* Hides desktop nav and buttons on mobile */
     }
 
     .site-header__menu-btn {
-        display: block;
+        display: block; /* Shows burger button on mobile */
     }
 
+    /* JS adds this class to open the sidebar */
     .site-header__sidebar--open {
-        display: block;
-        transform: translateX(0);
+        display: block; /* Makes sidebar visible */
+        transform: translateX(0); /* Slides sidebar into view */
     }
 
-
-    /* SITE FOOTER */
+    /* Stack footer columns vertically on mobile */
     .site-footer__links {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: column; /* Stacks columns vertically */
+        align-items: flex-start; /* Aligns columns to left */
     }
 
     .site-footer__info {
-        max-width: 100%;
-        margin-bottom: 30px;
+        max-width: 100%; /* Allows info column to use full width */
+        margin-bottom: 30px; /* Space below info column */
     }
 
     .site-footer__title {
-        margin-top: 0;
-        margin-bottom: 20px;
-        font-size: 18px;
+        margin-top: 0; /* Removes top margin */
+        margin-bottom: 20px; /* Space below column titles */
+        font-size: 18px; /* Keeps same font size */
     }
 
     .site-footer__services {
-        margin-top: 30px;
+        margin-top: 30px; /* Space above services column */
     }
 
     .footer-nav-list__item:not(:last-child) {
-        margin-bottom: 15px;
+        margin-bottom: 15px; /* Slightly larger gap between links on mobile */
     }
 
+    /* Stack policy bar vertically and center it */
     .site-footer__policy {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding-bottom: 20px;
-    }
-    .site-footer__rights {
-        text-align: center;
-    }
-    .site-footer__love {
-        margin-top: 0;
-        text-align: center;
+        flex-direction: column; /* Stacks items vertically */
+        align-items: center; /* Centers items */
+        justify-content: center; /* Centers vertically */
+        padding-bottom: 20px; /* Extra bottom padding on mobile */
     }
 
+    .site-footer__rights {
+        text-align: center; /* Centers copyright text */
+    }
+
+    .site-footer__love {
+        margin-top: 0; /* Removes top margin */
+        text-align: center; /* Centers team credit text */
+    }
 }
 
+/* RESPONSIVE - Breakpoint: 600px */
 @media (max-width: 600px) {
+
+    /* Stack promo block content vertically */
     .site-footer__promo {
-        flex-direction: column;
+        flex-direction: column; /* Stacks text and button vertically */
     }
 
+    /* Stack policy links vertically */
     .site-footer__policy-links {
-        flex-direction: column;
+        flex-direction: column; /* Stacks links vertically */
     }
-    
+
     .policy-links__item:nth-child(1) {
-        text-align: center;
-        margin-right: 0;
-        margin-bottom: 16px;
+        text-align: center; /* Centers first policy link */
+        margin-right: 0; /* Removes right margin */
+        margin-bottom: 16px; /* Space below first link */
     }
 }

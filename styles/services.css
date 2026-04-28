@@ -1,507 +1,584 @@
 :root {
-    --background: #fff;
-    --primary: #146ef5;
-    --surface: #f5f7fa;
-    --highlight: #00E5C3;
-    --text-primary: #1d1d1d;
-    --text-secondary: #6b7280;
-    --success: #16a34a;
-    --error: #dc2626;
-    --primaty-dark: #0a0f1e;
-    --services-bgc: #f4f7ff;
+    --background: #fff; /* White - used for card and page backgrounds */
+    --primary: #146ef5; /* Blue - main brand color for buttons and active states */
+    --surface: #f5f7fa; /* Light gray - used for sidebar background */
+    --highlight: #00E5C3; /* Teal - used for prices and positive values */
+    --text-primary: #1d1d1d; /* Near black - main text color */
+    --text-secondary: #6b7280; /* Gray - used for subtitles and inactive borders */
+    --success: #16a34a; /* Green - used for success notification text */
+    --error: #dc2626; /* Red - used for error notification text and border */
+    --primaty-dark: #0a0f1e; /* Dark navy - used for invoice summary background */
+    --services-bgc: #f4f7ff; /* Light blue - page background specific to services */
 }
 
 html {
-    height: 100%;
+    height: 100%; /* Full viewport height so body can push footer to bottom */
 }
 
+/* Services page has a light blue background instead of white */
 body {
-    background-color: var(--services-bgc);
+    background-color: var(--services-bgc); /* Overrides default white background */
 }
 
-
+/* Applied by JS when user clicks a card to select it */
 .active-service {
-    background-color: #eff5fe;
-    border: 2px solid var(--primary);
+    background-color: #eff5fe; /* Light blue fill on selected card */
+    border: 2px solid var(--primary); /* Blue border on selected card */
 }
-
 
 .main-content {
-    flex: 1;
-}
-.main-content__title {
-    margin: 50px 0 16px 0;
-    font-size: 48px;
-    text-align: center;
-    color: var(--text-primary);
-}
-.main-content__subtitle {
-    margin: 0 0 50px 0;
-    text-align: center;
-    font-size: 20px;
-    color: var(--text-secondary);
+    flex: 1; /* Grows to fill available space, pushes footer down */
 }
 
+.main-content__title {
+    margin: 50px 0 16px 0; /* Top spacing 50px, bottom spacing 16px */
+    font-size: 48px; /* Large page heading */
+    text-align: center; /* Centered heading */
+    color: var(--text-primary); /* Dark text */
+}
+
+.main-content__subtitle {
+    margin: 0 0 50px 0; /* Bottom spacing before steps begin */
+    text-align: center; /* Centered subtitle */
+    font-size: 20px; /* Subtitle font size */
+    color: var(--text-secondary); /* Gray text */
+}
+
+/* Two-column layout: step cards on left, invoice on right */
 .main-content__wrapper {
-    display: flex;
-    justify-content: space-between;
-    gap: 32px;
+    display: flex; /* Horizontal layout */
+    justify-content: space-between; /* Steps and invoice pushed apart */
+    gap: 32px; /* Gap between steps and invoice */
 }
 
 .main-content__step-sections {
-    max-width: 982px;
-    flex: 1;
+    max-width: 982px; /* Limits width of steps column */
+    flex: 1; /* Grows to fill available space */
 }
 
+/* Each step is a white card with shadow */
 .main-content__section {
-    padding: 32px;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
-    border-radius: 12px;
-    background-color: var(--background);
+    padding: 32px; /* Inner spacing inside each step card */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25); /* Subtle shadow under each card */
+    border-radius: 12px; /* Rounded corners */
+    background-color: var(--background); /* White card background */
 }
 
+/* Gap between step cards */
 .main-content__section:not(:last-child) {
-    margin: 0 0 32px;
+    margin: 0 0 32px; /* Space below each step except the last */
 }
 
 .main-content__section-title {
-    margin-top: 0;
-    margin-right: 0;
-    margin-left: 0;
-    font-size: 24px;
-    color: var(--text-primary);
+    margin-top: 0; /* Removes default top margin */
+    margin-right: 0; /* Removes default right margin */
+    margin-left: 0; /* Removes default left margin */
+    font-size: 24px; /* Step title size */
+    color: var(--text-primary); /* Dark text */
 }
 
 .main-content__section-subtitle {
-    margin: 0 0 24px 0;
-    font-size: 14px;
-    color: var(--text-secondary);
+    margin: 0 0 24px 0; /* Space below subtitle before content */
+    font-size: 14px; /* Smaller helper text */
+    color: var(--text-secondary); /* Gray text */
 }
 
-/* STEP 1 */
+
+/* STEP 1 - Website Type */
 .webtype__title {
-    margin: 0 0 24px 0;
-    font-size: 24px;
+    margin: 0 0 24px 0; /* Space below title before cards */
+    font-size: 24px; /* Title size */
 }
+
 .webtype__list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 колонки */
-    gap: 24px; /* расстояние между карточками */
-    padding: 0;
-    margin: 0;
-    list-style: none;
+    display: grid; /* Grid layout for cards */
+    grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+    gap: 24px; /* Space between cards */
+    padding: 0; /* Removes default list padding */
+    margin: 0; /* Removes default list margin */
+    list-style: none; /* Removes bullet points */
 }
+
+/* Each clickable website type card */
 .webtype__list__item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 24px;
-    border-radius: 10px;
-    border: 2px solid var(--text-secondary);
-    cursor: pointer;
-    transition: 0.2s;
+    display: flex; /* Flex layout inside card */
+    flex-direction: column; /* Stacks icon, title, description, price vertically */
+    justify-content: space-between; /* Spreads content evenly */
+    padding: 24px; /* Inner spacing */
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid var(--text-secondary); /* Gray border by default */
+    cursor: pointer; /* Hand cursor shows card is clickable */
+    transition: 0.2s; /* Smooth border color transition on hover */
 }
 
 .webtype__list__item.active-service {
-    border: 2px solid var(--primary);
+    border: 2px solid var(--primary); /* Blue border when card is selected */
 }
+
 .webtype__list__item:hover {
-    border-color: var(--primary);
+    border-color: var(--primary); /* Blue border on hover */
 }
+
 .webtype-item__logo {
-    margin: 0 0 12px;
+    margin: 0 0 12px; /* Space below icon */
 }
+
 .webtype-item__title {
-    margin: 0 0 4px;
-    font-size: 18px;
+    margin: 0 0 4px; /* Small space below card title */
+    font-size: 18px; /* Card title size */
 }
+
 .webtype-item__subtitle {
-    margin: 0 0 8px;
-    font-size: 14px;
-    font-weight: 500;
+    margin: 0 0 8px; /* Space below description */
+    font-size: 14px; /* Smaller description text */
+    font-weight: 500; /* Medium weight */
 }
+
 .webtype-item__price {
-    margin: 0;
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--highlight);
+    margin: 0; /* No margin */
+    font-size: 16px; /* Price text size */
+    font-weight: 600; /* Bold price */
+    color: var(--highlight); /* Teal price color */
 }
 
 
-/* STEP 2 */
+/* STEP 2 - Business Description */
 .describe {
-    overflow: visible;
+    overflow: visible; /* Allows content to overflow if needed */
 }
+
 .describe__title {
-    margin-bottom: 8px;
+    margin-bottom: 8px; /* Small space below title */
 }
+
 .describe__form-textarea {
-    width: 100%;
-    padding: 15px;
-    font-size: 18px;
-    border: 2px solid var(--text-primary);
-    border-radius: 8px;
-    color: var(--text-secondary);
-    box-sizing: border-box;
-    resize: none;
+    width: 100%; /* Full width textarea */
+    padding: 15px; /* Inner spacing */
+    font-size: 18px; /* Input text size */
+    border: 2px solid var(--text-primary); /* Dark border */
+    border-radius: 8px; /* Rounded corners */
+    color: var(--text-secondary); /* Gray input text */
+    box-sizing: border-box; /* Includes padding in width calculation */
+    resize: none; /* Prevents user from resizing textarea */
 }
+
 .describe__form-textarea:hover {
-    border-color: var(--primary);
+    border-color: var(--primary); /* Blue border on hover */
 }
 
 
-/* STEP 3 */
+/* STEP 3 - Deadline */
 .deadline__title {
-    margin: 0 0 24px 0;
-    font-size: 24px;
+    margin: 0 0 24px 0; /* Space below title */
+    font-size: 24px; /* Title size */
 }
+
 .deadline__list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+    gap: 24px; /* Space between cards */
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    list-style: none; /* Removes bullet points */
 }
+
 .deadline-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 24px;
-    border-radius: 10px;
-    border: 2px solid var(--text-secondary);
-    cursor: pointer;
-    transition: 0.2s;
+    display: flex; /* Flex layout inside card */
+    flex-direction: column; /* Stacks content vertically */
+    justify-content: space-between; /* Spreads content */
+    padding: 24px; /* Inner spacing */
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid var(--text-secondary); /* Gray border by default */
+    cursor: pointer; /* Hand cursor */
+    transition: 0.2s; /* Smooth transition */
 }
+
 .deadline-item.active-service {
-    border: 2px solid var(--primary);
+    border: 2px solid var(--primary); /* Blue border when selected */
 }
+
 .deadline-item:hover {
-    border-color: var(--primary);
+    border-color: var(--primary); /* Blue border on hover */
 }
 
 .deadline-item.active {
-    border-color: var(--primary);
-    background: rgba(0, 123, 255, 0.05);
+    border-color: var(--primary); /* Blue border for active state */
+    background: rgba(0, 123, 255, 0.05); /* Very subtle blue background */
 }
+
 .deadline-item__logo {
-    margin: 0 0 12px;
+    margin: 0 0 12px; /* Space below icon */
 }
+
 .deadline-item__title {
-    margin: 0 0 6px;
-    font-size: 18px;
+    margin: 0 0 6px; /* Space below title */
+    font-size: 18px; /* Card title size */
 }
+
 .deadline-item__price {
-    margin: 0;
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--highlight);
+    margin: 0; /* No margin */
+    font-size: 16px; /* Price text size */
+    font-weight: 600; /* Bold */
+    color: var(--highlight); /* Teal color */
 }
 
 
-/* STEP 4 */
+/* STEP 4 - Package Selection */
 .package__list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 колонки */
-    gap: 24px; /* расстояние между карточками */
-    padding: 0;
-    margin: 0;
-    list-style: none;
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 24px; /* Space between cards */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+    list-style: none; /* Removes bullet points */
 }
+
 .package__item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* 🔥 держит цену внизу */
-    padding: 24px;
-    border-radius: 10px;
-    border: 2px solid var(--text-secondary);
+    display: flex; /* Flex layout inside card */
+    flex-direction: column; /* Stacks content vertically */
+    justify-content: space-between; /* Keeps price pinned to bottom of card */
+    padding: 24px; /* Inner spacing */
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid var(--text-secondary); /* Gray border by default */
 }
+
 .package__item.active-service {
-    border-color: var(--primary);
+    border-color: var(--primary); /* Blue border when selected */
 }
+
 .package__item:hover {
-    border-color: var(--primary);
+    border-color: var(--primary); /* Blue border on hover */
 }
+
 .package__item-title {
-    font-size: 18px;
-    margin: 0 0 16px;
+    font-size: 18px; /* Package name size */
+    margin: 0 0 16px; /* Space below title */
 }
+
+/* Each feature row inside package card */
 .package-feature {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
-    font-size: 14px;
+    display: flex; /* Horizontal layout for icon + text */
+    align-items: center; /* Vertically centers icon with text */
+    gap: 10px; /* Space between icon and text */
+    margin-bottom: 8px; /* Space between feature rows */
+    font-size: 14px; /* Feature text size */
 }
+
 .package__item-price {
-    margin-bottom: 0;
-    font-weight: 600;
-    color: var(--highlight);
+    margin-bottom: 0; /* No bottom margin */
+    font-weight: 600; /* Bold */
+    color: var(--highlight); /* Teal color */
 }
 
+/* Hides Basic package price while keeping layout consistent with other cards */
 .invisible {
-    visibility: hidden;
+    visibility: hidden; /* Invisible but still takes up space */
 }
 
 
-/* STEP 5 */
+/* STEP 5 - Number of Pages */
 .pages__title {
-    margin-bottom: 8px;
+    margin-bottom: 8px; /* Space below title */
 }
+
 .pages__counter {
-    display: flex;
-    align-items: center;
+    display: flex; /* Horizontal layout */
+    align-items: center; /* Vertically centers slider and label */
 }
+
 .pages__input {
-    width: 100%;
-    margin-right: 30px;
+    width: 100%; /* Slider takes full available width */
+    margin-right: 30px; /* Space between slider and number label */
 }
+
+/* Current page count shown next to slider, updated by JS */
 .pages__label {
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--primary);
+    font-size: 24px; /* Large number display */
+    font-weight: 600; /* Bold */
+    color: var(--primary); /* Blue color */
 }
+
+/* Extra cost text shown by JS when pages > 5 */
 .pages__extra {
-    margin-top: 16px;
-    margin-bottom: 0;
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--highlight);
+    margin-top: 16px; /* Space above extra cost text */
+    margin-bottom: 0; /* No bottom margin */
+    font-size: 16px; /* Text size */
+    font-weight: 600; /* Bold */
+    color: var(--highlight); /* Teal color */
 }
 
 
-/* STEP 6 */
+/* STEP 6 - Promo Code */
 .promocode__form {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: flex; /* Horizontal layout */
+    align-items: center; /* Vertically centers input and button */
+    justify-content: space-between; /* Input stretches, button stays fixed */
 }
+
 .promocode__input {
-    width: 100%;
-    margin: 0;
-    padding: 12px 16px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid var(--text-secondary);
-    color: var(--text-secondary);
-    box-sizing: border-box;
+    width: 100%; /* Full width input */
+    margin: 0; /* No margin */
+    padding: 12px 16px; /* Inner spacing */
+    font-size: 16px; /* Input text size */
+    border-radius: 8px; /* Rounded corners */
+    border: 1px solid var(--text-secondary); /* Gray border */
+    color: var(--text-secondary); /* Gray input text */
+    box-sizing: border-box; /* Includes padding in width */
 }
+
 .promocode__btn {
-    margin-left: 20px;
-    padding: 12px 24px;
-    font-size: 16px;
-    border: 1px solid var(--primary);
-    color: var(--background);
-    background-color: var(--primary);
+    margin-left: 20px; /* Space between input and button */
+    padding: 12px 24px; /* Inner spacing */
+    font-size: 16px; /* Button text size */
+    border: 1px solid var(--primary); /* Blue border */
+    color: var(--background); /* White text */
+    background-color: var(--primary); /* Blue background */
 }
+
 .promocode__notification {
-    display: flex;
-    align-items: center;
+    display: flex; /* Horizontal layout for icon and text */
+    align-items: center; /* Vertically centers icon with text */
 }
+
 .promocode__notification span {
-    width: 16px;
-    height: 16px;
-    margin-right: 5px;
+    width: 16px; /* Icon width */
+    height: 16px; /* Icon height */
+    margin-right: 5px; /* Space between icon and message text */
 }
+
+/* Success notification - shown when valid promo code is applied */
 .promocode__notification.notification-green {
-    margin: 16px 0 0;
-    padding: 16px;
-    width: 100%;
-    border: 2px solid var(--highlight);
-    border-radius: 12px;
-    color: var(--success);
-    background-color: #caf3ed;
-    box-sizing: border-box;
+    margin: 16px 0 0; /* Space above notification */
+    padding: 16px; /* Inner spacing */
+    width: 100%; /* Full width */
+    border: 2px solid var(--highlight); /* Teal border */
+    border-radius: 12px; /* Rounded corners */
+    color: var(--success); /* Green text */
+    background-color: #caf3ed; /* Light teal background */
+    box-sizing: border-box; /* Includes padding in width */
 }
+
+/* Error notification - shown for invalid, inactive, or below minimum promo */
 .promocode__notification.notification-red {
-    margin: 16px 0 0;
-    padding: 16px;
-    width: 100%;
-    border: 2px solid var(--error);
-    border-radius: 12px;
-    color: var(--error);
-    background-color: #fbbdbd;
-    box-sizing: border-box;
+    margin: 16px 0 0; /* Space above notification */
+    padding: 16px; /* Inner spacing */
+    width: 100%; /* Full width */
+    border: 2px solid var(--error); /* Red border */
+    border-radius: 12px; /* Rounded corners */
+    color: var(--error); /* Red text */
+    background-color: #fbbdbd; /* Light red background */
+    box-sizing: border-box; /* Includes padding in width */
 }
+
 .promocode__hint {
-    margin-bottom: 0;
-    font-size: 14px;
-    color: var(--text-secondary);
+    margin-bottom: 0; /* No bottom margin */
+    font-size: 14px; /* Small hint text */
+    color: var(--text-secondary); /* Gray text */
 }
 
 
-
-
-/* INVOIVE SUMMARY */
-
+/* INVOICE SUMMARY */
 .invoice {
-    position: sticky;
-    top: 80px;
-    width: 420px;
-    max-height: fit-content;
-    padding: 32px;
-    border-radius: 16px;
-    background-color: var(--primaty-dark);
+    position: sticky; /* Stays in view while user scrolls through steps */
+    top: 80px; /* Offset from top to clear the sticky header */
+    width: 420px; /* Fixed invoice width */
+    max-height: fit-content; /* Height adjusts to content */
+    padding: 32px; /* Inner spacing */
+    border-radius: 16px; /* Rounded corners */
+    background-color: var(--primaty-dark); /* Dark navy background */
 }
+
 .invoice__title {
-    margin: 0 0 24px;
-    font-size: 24px;
-    color: var(--background);
+    margin: 0 0 24px; /* Space below title */
+    font-size: 24px; /* Title size */
+    color: var(--background); /* White text */
 }
+
 .invoice__variables {
-    margin: 0 0 24px;
+    margin: 0 0 24px; /* Space below line items */
 }
+
+/* Removes margin from empty paragraphs to avoid layout gaps */
 .invoice__variables p:empty {
-    margin: 0;
+    margin: 0; /* No margin when paragraph is empty */
 }
+
+/* Each invoice line item - label on left, price on right */
 .invoice__type {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: flex; /* Horizontal layout */
+    align-items: center; /* Vertically centers label and price */
+    justify-content: space-between; /* Label left, price right */
 }
+
 .invoice__deadline {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: flex; /* Horizontal layout */
+    align-items: center; /* Vertically centers content */
+    justify-content: space-between; /* Label left, price right */
 }
+
 .invoice__price {
-    font-weight: 600;
+    font-weight: 600; /* Bold price text */
 }
+
+/* Applied to additive price values like +$20 */
 .price-green {
-    color: var(--highlight);
+    color: var(--highlight); /* Teal color for positive price additions */
 }
+
 .invoice__package {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: flex; /* Horizontal layout */
+    align-items: center; /* Vertically centers content */
+    justify-content: space-between; /* Label left, price right */
 }
+
 .invoice__pages {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: flex; /* Horizontal layout */
+    align-items: center; /* Vertically centers content */
+    justify-content: space-between; /* Label left, price right */
 }
+
 .invoice__promocode {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: flex; /* Horizontal layout */
+    align-items: center; /* Vertically centers content */
+    justify-content: space-between; /* Label left, discount amount right */
 }
+
+/* Discount amount shown in green */
 .invoice__promocode span {
-    color: var(--success);
+    color: var(--success); /* Green color for discount value */
 }
+
 .invoice__variable {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
+    display: flex; /* Horizontal layout */
+    align-items: center; /* Vertically centers content */
+    justify-content: space-between; /* Label left, value right */
 }
 
+/* Total section separated from line items by a top border */
 .invoice__summary {
-    margin: 0 0 24px;
-    padding: 16px 0 0;
-    border-top: 2px solid var(--text-secondary);
+    margin: 0 0 24px; /* Space below summary before button */
+    padding: 16px 0 0; /* Space above total row */
+    border-top: 2px solid var(--text-secondary); /* Gray divider line */
 }
+
 .invoice__total {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 0 8px;
-    font-size: 18px;
-    color: var(--background);
+    display: flex; /* Horizontal layout */
+    align-items: center; /* Vertically centers label and price */
+    justify-content: space-between; /* "Total:" left, price right */
+    margin: 0 0 8px; /* Space below total row */
+    font-size: 18px; /* Total label size */
+    color: var(--background); /* White text */
 }
+
+/* Large highlighted total price, updated by JS */
 .invoice__total-price {
-    font-size: 36px;
-    color: var(--highlight);
+    font-size: 36px; /* Large price display */
+    color: var(--highlight); /* Teal color */
 }
+
+/* Full-width CTA button at bottom of invoice */
 .invoice__btn {
-    width: 100%;
-    height: 56px;
-    padding: 10px 10px;
-    font-size: 18px;
-    color: var(--background);
-    background-color: var(--primary);
+    width: 100%; /* Full width */
+    height: 56px; /* Fixed button height */
+    padding: 10px 10px; /* Inner spacing */
+    font-size: 18px; /* Button text size */
+    color: var(--background); /* White text */
+    background-color: var(--primary); /* Blue background */
 }
-
-
 
 .site-footer {
-    margin-top: 80px;
+    margin-top: 80px; /* Space above footer */
 }
 
 
-
-
-
+/* RESPONSIVE - LAPTOP max 1250px. Shrink invoice width as viewport gets smaller */
 @media (max-width: 1250px) {
     .invoice {
-        width: 330px;
+        width: 330px; /* Narrower invoice on smaller screens */
     }
 }
+
+/* RESPONSIVE - MEDIUM TABLET (max 1150px)*/
 @media (max-width: 1150px) {
     .invoice {
-        width: 255px;
+        width: 255px; /* Even narrower invoice */
     }
 }
 
+/* RESPONSIVE - TABLET max 1060px. Stack invoice below steps, reduce font sizes */
 @media (max-width: 1060px) {
     .main-content__wrapper {
-        flex-direction: column;
+        flex-direction: column; /* Stack steps and invoice vertically */
     }
+
     .main-content__title {
-        font-size: 40px;
+        font-size: 40px; /* Smaller heading on tablet */
     }
+
     .main-content__subtitle {
-        font-size: 18px;
+        font-size: 18px; /* Smaller subtitle on tablet */
     }
+
     .invoice {
-        position: static;
-        margin-top: 18px;
-        width: 100%;
-        box-sizing: border-box;
+        position: static; /* Remove sticky positioning when stacked below steps */
+        margin-top: 18px; /* Space above invoice */
+        width: 100%; /* Full width when stacked */
+        box-sizing: border-box; /* Includes padding in width calculation */
     }
+
     .package__list {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr; /* Switch packages from 3 to 2 columns */
     }
 }
 
 
+/* RESPONSIVE - MOBILE max 600px. Single column for all card grids */
 @media (max-width: 600px) {
     .main-content__title {
-        font-size: 36px;
+        font-size: 36px; /* Smaller heading on mobile */
     }
+
     .main-content__subtitle {
-        font-size: 16px;
+        font-size: 16px; /* Smaller subtitle on mobile */
     }
 
     .webtype__list {
-        grid-template-columns: 1fr; /* 1 колонка */
+        grid-template-columns: 1fr; /* 1 column on mobile */
     }
+
     .deadline__list {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* 1 column on mobile */
     }
 
     .package__list {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* 1 column on mobile */
     }
 }
 
+/* RESPONSIVE - max 400px. Extra adjustments for very small screens */
 @media (max-width: 400px) {
     .main-content__title {
-        font-size: 32px;
+        font-size: 32px; /* Even smaller heading */
     }
+
     .main-content__subtitle {
-        font-size: 16px;
+        font-size: 16px; /* Same subtitle size */
     }
+
     .main-content__section-title {
-        font-size: 20px;
+        font-size: 20px; /* Smaller step titles */
     }
+
     .promocode__form {
-        flex-direction: column;
+        flex-direction: column; /* Stack input and button vertically */
     }
+
     .promocode__btn {
-        margin: 15px 0 0;
-        width: 100%;
+        margin: 15px 0 0; /* Space above button when stacked */
+        width: 100%; /* Full width button */
     }
+
     .promocode__hint {
-        font-size: 12px;
+        font-size: 12px; /* Smaller hint text on very small screens */
     }
 }
