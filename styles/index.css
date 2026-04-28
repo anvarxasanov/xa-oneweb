@@ -1,0 +1,237 @@
+:root {
+    --background: #fff; /* White - used for backgrounds and text on dark surfaces */
+    --primary: #146ef5; /* Blue - main brand color for buttons and accents */
+    --surface: #f5f7fa; /* Light gray - used for sidebar and card backgrounds */
+    --highlight: #00E5C3; /* This color used for prices and positive values */
+    --text-primary: #1d1d1d; /* Black - main text color */
+    --text-secondary: #6b7280; /* Gray - used for subtitles and secondary text */
+    --success: #16a34a; /* Green - used for success messages */
+    --error: #dc2626; /* Red - used for error messages */
+    --primaty-dark: #0a0f1e; /* Dark - used for footer background */
+    --services-bgc: #f4f7ff; /* Light blue - background for services page */
+}
+/* HERO SECTION */
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 80px;
+  background: linear-gradient(135deg, #0b132b, #1c2541);
+  overflow: hidden;
+}
+
+/* Background image */
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.hero h1 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 60px;
+    font-weight: bold;
+    line-height: 1.3;
+    color: var(--background);
+}
+
+.hero h1 span {
+  color: var(--highlight);
+}
+
+.hero p {
+  margin: 0px;
+  color: var(--surface);
+  font-size: 20px;
+}
+
+.hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn {
+  padding: 12px 22px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.primary {
+    padding: 16px 32px;
+    font-size: 18px;
+    background: var(--primary);
+    color: var(--background);
+}
+
+.outline {
+    padding: 16px 32px;
+    font-size: 18px;
+    background: transparent;
+    border: 1px solid var(--background);
+    color: var(--background);
+}
+
+
+/* STATS SECTION */
+.stats {
+    background: #e5e7eb;
+    padding: 40px 0;
+}
+
+.stats-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    
+}
+
+.stat h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--primary);
+    font-size: 36px;
+}
+
+.stat p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 16px;
+}
+
+
+/* PROJECTS SECTION */
+.projects {
+  background: #f5f6f8;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.projects h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 36px;
+    color: var(--text-primary);
+}
+
+.subtitle {
+    margin-top: 0;
+    margin-bottom: 48px;
+    color: #6b7280;
+}
+
+.cards {
+  margin-top: 40px;
+  margin-bottom: 32px;
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 475px;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  text-align: left;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* IMAGE */
+.image {
+  position: relative;
+}
+
+.image img {
+  width: 100%;
+  height: 192px;
+  object-fit: cover;
+}
+
+/* BADGE */
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--primary);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+/* CONTENT */
+.card-content {
+  padding: 24px;
+}
+
+.card-content h3 {
+    margin: 0 0 8px;
+    font-size: 20px;
+    color: var(--text-primary);
+}
+
+.card-content p {
+  margin: 0 0 16px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+/* BOTTOM */
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.green {
+  color: var(--highlight);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.card-bottom a {
+  text-decoration: none;
+  color: var(--primary);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* BUTTON */
+.see-all {
+  padding: 12px 32px;
+  font-size: 18px;
+  font-weight: 500;
+  background: var(--primary);
+  color: var(--background);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
