@@ -78,23 +78,19 @@ body {
 }
 
 .btn {
-  padding: 12px 22px;
+  padding: 16px 32px;
   border-radius: 8px;
   border: none;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .primary {
-    padding: 16px 32px;
-    font-size: 18px;
     background: var(--primary);
     color: var(--background);
 }
 
 .outline {
-    padding: 16px 32px;
-    font-size: 18px;
     background: transparent;
     border: 1px solid var(--background);
     color: var(--background);
@@ -480,13 +476,44 @@ body {
 }
 
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
+    .hero-content h1 {
+        font-size: 48px;
+    }
+    .hero-content p {
+        font-size: 16px;
+    }
     .features-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .slide-track {
+        animation: scroll 10s linear infinite;
+    }
 }
 @media (max-width: 600px) {
+    .hero-content h1 {
+        font-size: 36px;
+    }
+    .hero-content p {
+        font-size: 14px;
+    }
+    .hero-buttons {
+        flex-direction: column;
+    }
+    .btn {
+        font-size: 14px;
+    }
+    .stats-list {
+        flex-direction: column;
+    }
+    .stat:not(:last-child) {
+        margin-bottom: 35px;
+    }
     .features-grid {
         grid-template-columns: repeat(1, 1fr);
+    }
+    .slide-track {
+        animation: scroll 15s linear infinite;
     }
 }
