@@ -1,118 +1,124 @@
 /* ================= BOOKING ================= */
 
 .booking {
-  padding: 80px 0 0;
-  background: var(--surface);
+  padding: 80px 0 0; /* top padding */
+  background: var(--surface); /* background color */
 }
 
 .booking__container {
-  display: flex;
-  justify-content: center;
+  display: flex; /* flex layout */
+  justify-content: center; /* center content */
 }
 
 .booking__content {
-  width: 100%;
-  max-width: 600px;
+  width: 100%; /* full width */
+  max-width: 600px; /* max width */
 }
 
+/* .booking__form {
+  background: var(--background);  background color
+  padding: 25px;  inner spacing
+  border-radius: 12px;  rounded corners
+} */
+
 .booking__form {
-  overflow: visible;
+  overflow: visible; /* allow overflow */
 }
+
 .booking__btn {
-  display: block;
-  width: 100%;
-  margin-top: 10px;
+  display: block; /* block button */
+  width: 100%; /* full width */
+  margin-top: 10px; /* top space */
 }
 
 .booking__group {
-  width: 100%;
-  margin-bottom: 15px;
+  width: 100%; /* full width */
+  margin-bottom: 15px; /* bottom space */
 }
 
 /* INPUTS */
 .booking__group input,
 .booking__group select {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  font-family: inherit;
+  width: 100%; /* full width */
+  box-sizing: border-box; /* include padding */
+  padding: 12px; /* inner space */
+  border-radius: 8px; /* rounded */
+  border: 1px solid #ddd; /* border */
+  font-family: inherit; /* same font */
 }
 
 /* FIX TIME INPUT */
 .booking__group input[type="time"] {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-  background-color: #fff;
-  color: var(--text-primary);
+  width: 100%; /* full width */
+  box-sizing: border-box; /* include padding */
+  padding: 12px; /* inner space */
+  border-radius: 8px; /* rounded */
+  border: 1px solid #ddd; /* border */
+  background-color: #fff; /* white bg */
+  color: var(--text-primary); /* text color */
 }
 
 /* ================= TEXT ================= */
 
 .booking__title {
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* space below */
 }
 
 .booking__text {
-  margin-bottom: 25px;
+  margin-bottom: 25px; /* space below */
 }
 
 /* ================= ERROR ================= */
 
 .input-error {
-  border-color: var(--error);
+  border-color: var(--error); /* error border */
 }
 
 .error-message {
-  display: none;
-  font-size: 12px;
-  color: var(--error);
-  margin-top: 5px;
+  display: none; /* hidden */
+  font-size: 12px; /* small text */
+  color: var(--error); /* error color */
+  margin-top: 5px; /* space above */
 }
 
 .error-message.active {
-  display: block;
+  display: block; /* show */
 }
 
 /* ================= MANAGE ================= */
 
 .booking-manage {
-  width: 100%;
-  padding: 60px 0;
-  background: var(--surface);
+  padding: 60px 0; /* vertical space */
+  background-color: var(--surface);
 }
 
 /* CENTER + SAME WIDTH */
 .booking-manage .container {
-  display: flex;
-  justify-content: center;
+  display: flex; /* flex */
+  justify-content: center; /* center */
 }
 
 .booking-manage__box {
-  width: 100%;
-  max-width: 600px;
-  background: var(--background);
-  padding: 25px;
-  border-radius: 12px;
+  width: 100%; /* full width */
+  max-width: 600px; /* max width */
+  background: var(--background); /* background */
+  padding: 25px; /* inner space */
+  border-radius: 12px; /* rounded */
 }
 
 /* BUTTONS */
 .booking-manage__box .button {
-  margin-right: 10px;
+  margin-right: 10px; /* space right */
 }
 
 .manage-cancel {
-  border-color: red;
-  color: red;
+  border-color: red; /* red border */
+  color: red; /* red text */
 }
 
 /* MODIFY PANEL */
 .modify-panel {
-  margin-top: 20px;
+  margin-top: 20px; /* space above */
 }
 
 /* ================= MOBILE ================= */
@@ -121,13 +127,13 @@
 
   .booking__form,
   .booking-manage__box {
-    padding: 20px;
+    padding: 20px; /* smaller padding */
   }
 
   /* buttons column */
   .booking-manage__box .button {
-    width: 100%;
-    margin: 10px 0 0 0;
+    width: 100%; /* full width */
+    margin: 10px 0 0 0; /* top space */
   }
 
 }

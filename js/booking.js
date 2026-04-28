@@ -1,142 +1,133 @@
 // ================= HELPER FUNCTIONS =================
 
 function showError(input, message) {
-    input.classList.add("input-error");
-    const error = input.parentElement.querySelector(".error-message");
-    error.textContent = message;
-    error.classList.add("active");
+  input.classList.add("input-error"); // red border
+  const error = input.parentElement.querySelector(".error-message"); // find error
+  error.textContent = message; // set text
+  error.classList.add("active"); // show
 }
 
 function clearError(input) {
-    input.classList.remove("input-error");
-    const error = input.parentElement.querySelector(".error-message");
-    error.textContent = "";
-    error.classList.remove("active");
+  input.classList.remove("input-error"); // remove red
+  const error = input.parentElement.querySelector(".error-message"); // find
+  error.textContent = ""; // clear text
+  error.classList.remove("active"); // hide
 }
 
-// ================= VALIDATION HELPERS =================
-
-// check empty
 function isEmpty(value) {
-    return value.trim() === "";
+  return value.trim() === ""; // check empty
 }
 
-// regex tests
-const nameRegex = /^[A-Za-z\s]+$/;
-const phoneRegex = /^[0-9]+$/;
+const nameRegex = /^[A-Za-z\s]+$/; // letters
+const phoneRegex = /^[0-9]+$/; // numbers
 
-// ================= BOOKING FORM =================
-
-const form = document.querySelector(".booking__form");
+const form = document.querySelector(".booking__form"); // form
 
 if (form) {
-    const nameInput = form.querySelector(".input-name");
-    const phoneInput = form.querySelector(".input-phone");
-    const serviceInput = form.querySelector(".input-service");
-    const timeInput = form.querySelector(".input-time");
 
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
+  const nameInput = form.querySelector(".input-name"); // name
+  const phoneInput = form.querySelector(".input-phone"); // phone
+  const serviceInput = form.querySelector(".input-service"); // service
+  const timeInput = form.querySelector(".input-time"); // time
 
-        let isValid = true;
+  form.addEventListener("submit", function (e) {
 
-        [nameInput, phoneInput, serviceInput, timeInput].forEach(clearError);
+    e.preventDefault(); // stop reload
 
-        if (isEmpty(nameInput.value) || !nameRegex.test(nameInput.value)) {
-            showError(nameInput, "Enter valid name");
-            isValid = false;
-        }
+    let isValid = true; // flag
 
-        if (isEmpty(phoneInput.value) || !phoneRegex.test(phoneInput.value)) {
-            showError(phoneInput, "Enter valid phone");
-            isValid = false;
-        }
+    [nameInput, phoneInput, serviceInput, timeInput].forEach(clearError); // clear
 
-        if (isEmpty(serviceInput.value)) {
-            showError(serviceInput, "Select service");
-            isValid = false;
-        }
+    if (isEmpty(nameInput.value) || !nameRegex.test(nameInput.value)) {
+      showError(nameInput, "Enter valid name"); // error
+      isValid = false;
+    }
 
-        if (isEmpty(timeInput.value)) {
-            showError(timeInput, "Select time");
-            isValid = false;
-        }
+    if (isEmpty(phoneInput.value) || !phoneRegex.test(phoneInput.value)) {
+      showError(phoneInput, "Enter valid phone"); // error
+      isValid = false;
+    }
 
-        if (isValid) {
-            localStorage.setItem("bookingPhone", phoneInput.value);
-            localStorage.setItem("bookingTime", timeInput.value);
+    if (isEmpty(serviceInput.value)) {
+      showError(serviceInput, "Select service"); // error
+      isValid = false;
+    }
 
-            alert("Booking saved!");
-            form.reset();
-        }
-    });
+    if (isEmpty(timeInput.value)) {
+      showError(timeInput, "Select time"); // error
+      isValid = false;
+    }
+
+    if (isValid) {
+      localStorage.setItem("bookingPhone", phoneInput.value); // save phone
+      localStorage.setItem("bookingTime", timeInput.value); // save time
+      alert("Booking saved!"); // alert
+      form.reset(); // clear form
+    }
+  });
 }
 
-// ================= MANAGE =================
+const managePhone = document.querySelector(".manage-phone"); // input
+const modifyBtn = document.querySelector(".manage-modify"); // modify
+const cancelBtn = document.querySelector(".manage-cancel"); // cancel
+const confirmBtn = document.querySelector(".confirm-modify"); // confirm
+const modifyPanel = document.querySelector(".modify-panel"); // panel
+const currentTimeText = document.querySelector(".current-time-text"); // text
 
-const managePhone = document.querySelector(".manage-phone");
-const modifyBtn = document.querySelector(".manage-modify");
-const cancelBtn = document.querySelector(".manage-cancel");
-const confirmBtn = document.querySelector(".confirm-modify");
-const modifyPanel = document.querySelector(".modify-panel");
-const currentTimeText = document.querySelector(".current-time-text");
-
-// phone check
 function validatePhone() {
-    clearError(managePhone);
+  clearError(managePhone); // clear
 
-    if (isEmpty(managePhone.value) || !phoneRegex.test(managePhone.value)) {
-        showError(managePhone, "Enter valid phone");
-        return false;
-    }
-    return true;
+  if (isEmpty(managePhone.value) || !phoneRegex.test(managePhone.value)) {
+    showError(managePhone, "Enter valid phone"); // error
+    return false;
+  }
+  return true;
 }
 
-// MODIFY
 modifyBtn.addEventListener("click", () => {
-    if (!validatePhone()) return;
 
-    const savedPhone = localStorage.getItem("bookingPhone");
-    const savedTime = localStorage.getItem("bookingTime");
+  if (!validatePhone()) return; // check
 
-    if (managePhone.value === savedPhone) {
-        modifyPanel.style.display = "block";
-        currentTimeText.textContent = "Current time: " + savedTime;
-    } else {
-        alert("No booking found");
-    }
+  const savedPhone = localStorage.getItem("bookingPhone"); // get
+  const savedTime = localStorage.getItem("bookingTime"); // get
+
+  if (managePhone.value === savedPhone) {
+    modifyPanel.style.display = "block"; // show
+    currentTimeText.textContent = "Current time: " + savedTime; // set
+  } else {
+    alert("No booking found"); // alert
+  }
 });
 
-// CONFIRM MODIFY
 confirmBtn.addEventListener("click", () => {
-    const newTime = document.querySelector(".new-time");
 
-    if (isEmpty(newTime.value)) {
-        showError(newTime, "Select time");
-        return;
-    }
+  const newTime = document.querySelector(".new-time"); // new time
 
-    localStorage.setItem("bookingTime", newTime.value);
-    modifyPanel.style.display = "none";
-    alert("Time updated!");
+  if (isEmpty(newTime.value)) {
+    showError(newTime, "Select time"); // error
+    return;
+  }
+
+  localStorage.setItem("bookingTime", newTime.value); // update
+  modifyPanel.style.display = "none"; // hide
+  alert("Time updated!"); // alert
 });
-
 
 cancelBtn.addEventListener("click", () => {
-    if (!validatePhone()) return;
 
-    const savedPhone = localStorage.getItem("bookingPhone");
+  if (!validatePhone()) return; // check
 
-    if (managePhone.value === savedPhone) {
-        localStorage.removeItem("bookingPhone");
-        localStorage.removeItem("bookingTime");
+  const savedPhone = localStorage.getItem("bookingPhone"); // get
 
-        // CLEAR INPUT
-        managePhone.value = "";
+  if (managePhone.value === savedPhone) {
+    localStorage.removeItem("bookingPhone"); // remove
+    localStorage.removeItem("bookingTime"); // remove
+    managePhone.value = ""; // clear input
+    currentTimeText.textContent = ""; // clear text
+    alert("Booking canceled!"); // alert
+  } else {
+    alert("No booking found"); // alert
+  }
 
-        alert("Booking canceled!");
-    } else {
-        alert("No booking found");
-    }
-    modifyPanel.style.display = "none";
+  modifyPanel.style.display = "none"; // hide
 });
