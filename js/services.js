@@ -242,7 +242,7 @@ promoButton.addEventListener("click", () => {
         } else {
             promo_discount = promo_data.discount
 
-            const discount_amount = total_price * promo_discount / 100;
+            const discount_amount = base_price * promo_discount / 100;
 
             promoNotification.classList.remove("notification-red");
             promoNotification.classList.add("notification-green");
