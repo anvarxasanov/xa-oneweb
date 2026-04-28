@@ -10,6 +10,10 @@
     --primaty-dark: #0a0f1e; /* Dark - used for footer background */
     --services-bgc: #f4f7ff; /* Light blue - background for services page */
 }
+
+body {
+    background-color: var(--services-bgc);
+}
 /* HERO SECTION */
 .hero {
   position: relative;
@@ -123,7 +127,7 @@
 
 /* PROJECTS SECTION */
 .projects {
-  background: #f5f6f8;
+  background: var(--background);
   padding: 80px 20px;
   text-align: center;
 }
@@ -304,4 +308,63 @@
 .feature-card p {
   font-size: 14px;
   color: var(--surface);
+}
+
+
+.tech {
+    margin: 0;
+    padding: 80px 20px;
+    text-align: center;
+}
+.tech h2 {
+    margin: 0 0 16px;
+    font-size: 36px;
+    color: var(--text-primary);
+}
+.tech p{
+    margin: 0 0 48px;
+    font-size: 16px;
+    color: var(--text-secondary);
+}
+/* SLIDER */
+.slider {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+}
+
+.slide-track {
+  display: flex;
+  gap: 20px;
+  animation: scroll 25s linear infinite;
+}
+
+.slider:hover .slide-track {
+  animation-play-state: paused;
+}
+
+.tech-card {
+  min-width: 140px;
+  padding: 16px 0;
+  background: var(--background);
+  border-radius: 12px;
+  font-weight: 600;
+  border: 1px solid var(--text-secondary);
+  color: var(--text-primary);
+  white-space: nowrap;
+  transition: 0.2s ease;
+}
+
+.tech-card:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
