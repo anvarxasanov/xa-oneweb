@@ -161,7 +161,7 @@
 }
 
 .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
 }
 
 /* IMAGE */
@@ -234,4 +234,74 @@
   border: none;
   border-radius: 10px;
   cursor: pointer;
+}
+
+
+
+
+/* FEATURES SECTION */
+.features {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #0b132b, #1c2541);
+  text-align: center;
+}
+
+.features h2 {
+    margin: 0 0 16px;
+    font-size: 36px;
+    color: var(--background);
+}
+
+.features .subtitle {
+  margin: 0 0 48px;
+  color: var(--surface);
+}
+
+/* GRID */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CARD */
+.feature-card {
+  background: rgba(255,255,255,0.03);
+  border-radius: 16px;
+  padding: 25px;
+  text-align: left;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  border: 1px solid #00d4c6;
+}
+
+/* ACTIVE CARD (как первая) */
+.feature-card.active {
+  border: 1px solid #00d4c6;
+  box-shadow: 0 0 15px rgba(0,212,198,0.3);
+}
+
+/* ICON */
+.icon {
+  color: var(--highlight);
+  margin-bottom: 0 0 16px;
+}
+
+/* TEXT */
+.feature-card h3 {
+  font-size: 20px;
+  margin-bottom: 0 0 8px;
+  color: var(--background);
+}
+
+.feature-card p {
+  font-size: 14px;
+  color: var(--surface);
 }
