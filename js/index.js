@@ -1,10 +1,10 @@
-// const text = ["We Build Websites", "That Work", "For Your Business"];
-// let i = 0;
+const text = ["We Build Websites", "That Work", "For Your Business"];
+let i = 0;
 
-// setInterval(() => {
-//     document.querySelector(".hero-content h1").innerText = text[i];
-//     i = (i + 1) % text.length;
-// }, 2000);
+setInterval(() => {
+    document.querySelector(".hero-content h1").innerText = text[i];
+    i = (i + 1) % text.length;
+}, 1500);
 
 
 const observer = new IntersectionObserver(entries => {
